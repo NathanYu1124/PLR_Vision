@@ -6,7 +6,7 @@ PLR Vision是MacOS系统下的开源中文车牌识别系统，核心算法基�
 
 #### 软件界面
 
-![mainView](/Users/nathanyu/Documents/Projects/Mac/PLR_Vision-master/Imgs/mainView.png)
+![mainView](https://github.com/NathanYu1124/PLR_Vision/blob/master/Imgs/mainView.png)
 
 **PLR Vision系统目前已经实现的功能有:**
 
