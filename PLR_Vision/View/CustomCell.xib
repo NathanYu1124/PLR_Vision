@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="CustomCellID" id="qQx-fA-67h" customClass="CustomCellView" customModule="PlateLicenseRecognition" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2JB-Cz-7W6">
+                    <rect key="frame" x="65" y="12" width="214" height="20"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" id="5U2-fX-eda">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIx-J5-zcZ">
+                    <rect key="frame" x="20" y="7" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="OFW-vg-2GP"/>
+                </imageView>
+            </subviews>
+            <connections>
+                <outlet property="iconView" destination="eIx-J5-zcZ" id="y3M-Wr-5dw"/>
+                <outlet property="textField" destination="2JB-Cz-7W6" id="vw9-Ha-vkG"/>
+                <outlet property="textLabel" destination="2JB-Cz-7W6" id="Zfu-dv-qSm"/>
+            </connections>
+            <point key="canvasLocation" x="109" y="-90.5"/>
+        </tableCellView>
+    </objects>
+</document>

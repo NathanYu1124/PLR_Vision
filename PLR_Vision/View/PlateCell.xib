@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="PlateCellID" id="0i5-2U-wN7" customClass="PlateCell" customModule="PLR_Vision" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="281" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ST-R8-mAj">
+                    <rect key="frame" x="3" y="7" width="60" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="plate_blue" id="9cR-S2-uUL"/>
+                </imageView>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1I-ya-BPs">
+                    <rect key="frame" x="69" y="10" width="179" height="24"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" id="Due-gc-z0f">
+                        <font key="font" metaFont="system" size="14"/>
+                        <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kVA-xd-Pac">
+                    <rect key="frame" x="192" y="10" width="24" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="more_red" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="veD-kJ-9gi">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <connections>
+                <outlet property="iconImageView" destination="3ST-R8-mAj" id="5xi-GV-lYK"/>
+                <outlet property="imageView" destination="3ST-R8-mAj" id="5Hh-8Y-SSG"/>
+                <outlet property="textField" destination="d1I-ya-BPs" id="bdj-1S-jSq"/>
+                <outlet property="textLabel" destination="d1I-ya-BPs" id="s6g-Z6-pHn"/>
+            </connections>
+            <point key="canvasLocation" x="155.5" y="118.5"/>
+        </tableCellView>
+    </objects>
+    <resources>
+        <image name="more_red" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="plate_blue" width="60" height="30"/>
+    </resources>
+</document>
