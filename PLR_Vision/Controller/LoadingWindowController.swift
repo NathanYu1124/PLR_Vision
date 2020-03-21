@@ -22,12 +22,14 @@ class LoadingWindowController: NSWindowController {
         
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+4) {
-            // storyboard加载视图控制器
-            let homeWC = self.storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "HomeWindowController")) as! HomeWindowController
             
+            
+            
+            let homeWC = self.storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "HomeWindowController")) as! HomeWindowController
+
             //  退出加载窗口
             self.window?.orderOut(nil)
-            
+
             // 显示主窗口
             homeWC.window?.makeKeyAndOrderFront(nil)
             homeWC.window?.center()

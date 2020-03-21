@@ -95,6 +95,10 @@
 		7E71AFF12089B23B00AA0CB2 /* CPPLINT.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 7E71AF1F2089B23B00AA0CB2 /* CPPLINT.cfg */; };
 		7E71AFF22089B23B00AA0CB2 /* caffe.proto in Resources */ = {isa = PBXBuildFile; fileRef = 7E71AF202089B23B00AA0CB2 /* caffe.proto */; };
 		7E71AFF52089B23B00AA0CB2 /* manual.html in Resources */ = {isa = PBXBuildFile; fileRef = 7E71AFB72089B23B00AA0CB2 /* manual.html */; };
+		7E82D29C24233DA700D51663 /* UpdatesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E82D29B24233DA700D51663 /* UpdatesWindowController.swift */; };
+		7E82D29E24233DB900D51663 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E82D29D24233DB900D51663 /* UpdatesViewController.swift */; };
+		7E82D3202425CCE200D51663 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E82D31F2425CCE200D51663 /* Sparkle.framework */; };
+		7E82D3222425CD1700D51663 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E82D31F2425CCE200D51663 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EABF5822408E32D00B364EC /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABF5812408E32D00B364EC /* MenuButton.swift */; };
 		7EB0980820DAA46200A911D0 /* PlateInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097E920DAA46200A911D0 /* PlateInfoModel.swift */; };
 		7EB0980920DAA46200A911D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB097EB20DAA46200A911D0 /* Main.storyboard */; };
@@ -132,6 +136,19 @@
 		7EB0984A20DAA4CE00A911D0 /* CacheQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0983E20DAA4CE00A911D0 /* CacheQueue.cpp */; };
 		7EC6382A240BADC8002C4527 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC63829240BADC8002C4527 /* BottomView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E82D3212425CD0D00D51663 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E82D3222425CD1700D51663 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7E0660712409727300911762 /* MSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSView.swift; sourceTree = "<group>"; };
@@ -761,6 +778,9 @@
 		7E71AFB62089B23B00AA0CB2 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		7E71AFB72089B23B00AA0CB2 /* manual.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = manual.html; sourceTree = "<group>"; };
 		7E71AFB82089B23B00AA0CB2 /* base64.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = base64.hpp; sourceTree = "<group>"; };
+		7E82D29B24233DA700D51663 /* UpdatesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesWindowController.swift; sourceTree = "<group>"; };
+		7E82D29D24233DB900D51663 /* UpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
+		7E82D31F2425CCE200D51663 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7EABF5812408E32D00B364EC /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		7EB097E920DAA46200A911D0 /* PlateInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateInfoModel.swift; sourceTree = "<group>"; };
 		7EB097EB20DAA46200A911D0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -820,6 +840,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E58FA942407CCEF001E5C02 /* opencv2.a in Frameworks */,
+				7E82D3202425CCE200D51663 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1504,6 +1525,7 @@
 		7E71AE2C2089B1C000AA0CB2 = {
 			isa = PBXGroup;
 			children = (
+				7E82D31E2425CCCD00D51663 /* Frameworks */,
 				7E4DDC7C241734E100051E34 /* Model */,
 				7EB0982020DAA4CE00A911D0 /* NYPR */,
 				7E71AE6A2089B23A00AA0CB2 /* OpenCV */,
@@ -2036,6 +2058,14 @@
 			path = OpenCVInterface;
 			sourceTree = "<group>";
 		};
+		7E82D31E2425CCCD00D51663 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E82D31F2425CCE200D51663 /* Sparkle.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		7EB097E820DAA46200A911D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2071,6 +2101,8 @@
 				7E066073240A2E2800911762 /* ImageViewController.swift */,
 				7E0EC49B240C913300599310 /* SettingViewController.swift */,
 				7E0EC49D240CB1F000599310 /* VideoStreamViewController.swift */,
+				7E82D29B24233DA700D51663 /* UpdatesWindowController.swift */,
+				7E82D29D24233DB900D51663 /* UpdatesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2200,6 +2232,7 @@
 				7E71AE312089B1C000AA0CB2 /* Sources */,
 				7E71AE322089B1C000AA0CB2 /* Frameworks */,
 				7E71AE332089B1C000AA0CB2 /* Resources */,
+				7E82D3212425CD0D00D51663 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -2238,6 +2271,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7E71AE2C2089B1C000AA0CB2;
 			productRefGroup = 7E71AE362089B1C000AA0CB2 /* Products */;
@@ -2352,6 +2386,7 @@
 				7E58FBD02407F42A001E5C02 /* HomeWindowController.swift in Sources */,
 				7EB0980A20DAA46200A911D0 /* AppDelegate.swift in Sources */,
 				7EB0984520DAA4CE00A911D0 /* NYPlateDetect.cpp in Sources */,
+				7E82D29C24233DA700D51663 /* UpdatesWindowController.swift in Sources */,
 				7EB0981320DAA46200A911D0 /* CustomCellView.swift in Sources */,
 				7E58FBD42407F497001E5C02 /* Constant.swift in Sources */,
 				7E4DDC8D241FB30500051E34 /* RecordsView.swift in Sources */,
@@ -2367,6 +2402,7 @@
 				7E0660722409727300911762 /* MSView.swift in Sources */,
 				7EB0981D20DAA46200A911D0 /* AudioTool.swift in Sources */,
 				7EB0984A20DAA4CE00A911D0 /* CacheQueue.cpp in Sources */,
+				7E82D29E24233DB900D51663 /* UpdatesViewController.swift in Sources */,
 				7E4DDC85241E112300051E34 /* PlatesView.swift in Sources */,
 				7EB0984320DAA4CE00A911D0 /* NYCharacterRecognition.cpp in Sources */,
 				7EB0981C20DAA46200A911D0 /* NSImage+OpenCV.mm in Sources */,
@@ -2526,7 +2562,12 @@
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/TinyDNN",
 					"$(PROJECT_DIR)/OpenCV",
@@ -2534,9 +2575,10 @@
 				INFOPLIST_FILE = PLR_Vision/Others/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenCV";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inkinc.PLR-Vision";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";
@@ -2553,7 +2595,12 @@
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/TinyDNN",
 					"$(PROJECT_DIR)/OpenCV",
@@ -2561,9 +2608,10 @@
 				INFOPLIST_FILE = PLR_Vision/Others/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenCV";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inkinc.PLR-Vision";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";

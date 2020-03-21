@@ -12,7 +12,7 @@ class LoadingViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         getModelPath()
     }
     
@@ -24,5 +24,4 @@ class LoadingViewController: NSViewController {
         CNN_ZH_MODEL_PATH = Bundle.main.path(forResource: "CNN_ZH63_MODEL", ofType: "md")
         CACHE_PATH = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
     }
-    
 }
