@@ -2562,7 +2562,7 @@
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2584,6 +2584,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -2595,7 +2596,7 @@
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2616,6 +2617,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
