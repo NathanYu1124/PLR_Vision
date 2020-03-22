@@ -18,7 +18,7 @@ class AboutViewController: NSViewController {
         
         view.wantsLayer = true
         // CGColor(red: 249 / 255, green: 241 / 255, blue: 233 / 255, alpha: 0.6)
-        view.layer?.backgroundColor = CGColor(red: 0 / 255, green: 0 / 255, blue: 0 / 255, alpha: 0.8)
+        view.layer?.backgroundColor = CGColor.clear
         
         detailView.wantsLayer = true
         detailView.layer?.backgroundColor = L_Yellow
@@ -32,25 +32,25 @@ class AboutViewController: NSViewController {
     
     // 项目地址
     @IBAction func showProjectPage(_ sender: NSButton) {
-        let url = URL(fileURLWithPath: "https://github.com/NathanYu1124/PLR_Vision")
+        let url = URL(string: "https://github.com/NathanYu1124/PLR_Vision")!
         NSWorkspace.shared.open(url)
     }
     
     // 关于我们
     @IBAction func showUsPage(_ sender: NSButton) {
-        let url = URL(fileURLWithPath: "https://github.com/NathanYu1124/PLR_Vision")
+        let url = URL(string: "https://github.com/NathanYu1124/PLR_Vision")!
         NSWorkspace.shared.open(url)
     }
     
     // 帮助支持
     @IBAction func showHelpPage(_ sender: NSButton) {
-        let url = URL(fileURLWithPath: "https://github.com/NathanYu1124/PLR_Vision")
+        let url = URL(string: "https://github.com/NathanYu1124/PLR_Vision")!
         NSWorkspace.shared.open(url)
     }
     
     // 更新日志
     @IBAction func showLogPage(_ sender: NSButton) {
-        let url = URL(fileURLWithPath: "https://github.com/NathanYu1124/PLR_Vision/releases")
+        let url = URL(string: "https://github.com/NathanYu1124/PLR_Vision/releases")!
         NSWorkspace.shared.open(url)
     }
 }

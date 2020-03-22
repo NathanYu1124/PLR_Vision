@@ -229,6 +229,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="700"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <visualEffectView blendingMode="withinWindow" material="mediumLight" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="NjD-aX-zC0">
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="700"/>
+                            </visualEffectView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-jQ-sab" userLabel="Detail View">
                                 <rect key="frame" x="190" y="250" width="620" height="380"/>
                                 <subviews>
@@ -241,8 +244,8 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mCj-wv-GXD">
-                                        <rect key="frame" x="95" y="310" width="125" height="23"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Version  2.0.0" id="we3-IK-h5x">
+                                        <rect key="frame" x="95" y="310" width="121" height="23"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Version  2.0.1" id="we3-IK-h5x">
                                             <font key="font" metaFont="system" size="20"/>
                                             <color key="textColor" red="0.97647058823529409" green="0.94509803921568625" blue="0.9137254901960784" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -413,7 +416,11 @@
                             </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="NjD-aX-zC0" firstAttribute="leading" secondItem="Y8E-oE-5W2" secondAttribute="leading" id="19q-nT-Fub"/>
                             <constraint firstItem="Ahh-jQ-sab" firstAttribute="centerX" secondItem="Y8E-oE-5W2" secondAttribute="centerX" id="71o-Dz-9m7"/>
+                            <constraint firstAttribute="trailing" secondItem="NjD-aX-zC0" secondAttribute="trailing" id="BKF-Oq-pyl"/>
+                            <constraint firstAttribute="bottom" secondItem="NjD-aX-zC0" secondAttribute="bottom" id="PQQ-zL-RuS"/>
+                            <constraint firstItem="NjD-aX-zC0" firstAttribute="top" secondItem="Y8E-oE-5W2" secondAttribute="top" id="UD4-NC-bml"/>
                             <constraint firstItem="Ahh-jQ-sab" firstAttribute="top" secondItem="Y8E-oE-5W2" secondAttribute="top" constant="70" id="Vuy-tI-wsb"/>
                         </constraints>
                     </view>
@@ -438,7 +445,7 @@
                                         <menuItem title="关于 PLR Vision" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <action selector="aboutButtonPressed:" target="Ady-hI-5gd" id="TDZ-xW-sXF"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -485,7 +492,7 @@
                 <customObject id="rba-AZ-yNI" customClass="SUUpdater"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="-518"/>
+            <point key="canvasLocation" x="1930" y="-1410"/>
         </scene>
         <!--Main Window Controller-->
         <scene sceneID="Rqa-Q8-IOx">
@@ -581,7 +588,7 @@
                                                     <tableColumns>
                                                         <tableColumn width="275" minWidth="40" maxWidth="1000" id="RGB-hH-ioP">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <font key="font" metaFont="menu" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -1035,7 +1042,7 @@
                                             <tableColumns>
                                                 <tableColumn width="219" minWidth="40" maxWidth="1000" id="ym7-VN-Bax">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="menu" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -1206,18 +1213,18 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-gO-UF7">
-                                                <rect key="frame" x="16" y="30" width="28" height="19"/>
+                                                <rect key="frame" x="11" y="30" width="40" height="19"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="1个" id="o6T-dg-hdv">
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="1个" id="o6T-dg-hdv">
                                                     <font key="font" metaFont="system" size="15"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XN0-5o-epG">
-                                                <rect key="frame" x="75" y="30" width="28" height="19"/>
+                                                <rect key="frame" x="66" y="30" width="40" height="19"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="1个" id="xga-d2-5fa">
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="1个" id="xga-d2-5fa">
                                                     <font key="font" metaFont="system" size="15"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1236,7 +1243,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="wUR-4K-A4c">
                                         <rect key="frame" x="310" y="8" width="600" height="158"/>
                                         <subviews>
-                                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udP-Wc-Fxd">
+                                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udP-Wc-Fxd" userLabel="right">
                                                 <rect key="frame" x="532" y="55" width="48" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="rightArrow" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="sU4-Lw-brN">
@@ -1319,6 +1326,22 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="kGD-TE-nMB"/>
                                                     </imageView>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QmU-fZ-W6a">
+                                                        <rect key="frame" x="0.0" y="-11" width="169" height="78"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="wave_1" id="grD-Ia-2fF"/>
+                                                    </imageView>
+                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTv-kV-weK" userLabel="audioButton">
+                                                        <rect key="frame" x="69" y="12" width="32" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="radio" imagePosition="only" alignment="center" alternateImage="radio_highlighted" imageScaling="proportionallyUpOrDown" inset="2" id="gES-pV-LVY">
+                                                            <behavior key="behavior" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="playSound:" target="xCf-gd-p0V" id="5dG-QB-CYl"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <connections>
                                                     <outlet property="colorLabel" destination="e2h-nE-KbX" id="jy3-Lq-bUN"/>
@@ -1327,7 +1350,7 @@
                                                     <outlet property="provinceLabel" destination="CfF-3d-SGy" id="s88-cV-NQN"/>
                                                 </connections>
                                             </customView>
-                                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d18-9O-NUl">
+                                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d18-9O-NUl" userLabel="left">
                                                 <rect key="frame" x="20" y="55" width="48" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="leftArrow" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="dCA-Aq-wno">
@@ -1853,7 +1876,7 @@
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="carNum" id="eJF-Zo-aD9"/>
                                             </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-Et-H1t">
-                                                <rect key="frame" x="12" y="20" width="28" height="19"/>
+                                                <rect key="frame" x="12" y="20" width="50" height="19"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="1个" id="0m3-uT-AtM">
                                                     <font key="font" metaFont="system" size="15"/>
@@ -1917,6 +1940,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audioButton" destination="UTv-kV-weK" id="WTP-t8-b2N"/>
                         <outlet property="bottomView" destination="lVN-pn-BG0" id="rPM-rC-wve"/>
                         <outlet property="changeView" destination="wUR-4K-A4c" id="dX3-Y8-8yS"/>
                         <outlet property="charsView" destination="IFV-zc-yku" id="78X-UQ-y9r"/>
@@ -28812,11 +28836,14 @@ AGcAAAAAAAAAAAAAAAAAGICOA
         <image name="photo_selected" width="128" height="128"/>
         <image name="plate" width="136" height="36"/>
         <image name="preArrow" width="32" height="32"/>
+        <image name="radio" width="64" height="64"/>
+        <image name="radio_highlighted" width="128" height="128"/>
         <image name="rightArrow" width="128" height="128"/>
         <image name="settings" width="128" height="128"/>
         <image name="settings_selected" width="128" height="128"/>
         <image name="video" width="128" height="128"/>
         <image name="videoPlay" width="1102" height="866"/>
         <image name="video_selected" width="128" height="128"/>
+        <image name="wave_1" width="200" height="113"/>
     </resources>
 </document>

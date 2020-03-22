@@ -22,6 +22,7 @@ class LoadingViewController: NSViewController {
         SVM_MODEL_PATH = Bundle.main.path(forResource: "svm", ofType: "xml")
         CNN_CHAR_MODEL_PATH = Bundle.main.path(forResource: "CNN_CHAR_MODEL", ofType: "md")
         CNN_ZH_MODEL_PATH = Bundle.main.path(forResource: "CNN_ZH63_MODEL", ofType: "md")
-        CACHE_PATH = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        CACHE_PATH = NSTemporaryDirectory()
+    
     }
 }
