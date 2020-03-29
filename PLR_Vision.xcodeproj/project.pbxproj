@@ -78,6 +78,7 @@
 		7E210CEC209D840700437453 /* 闽.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E210CAB209D840700437453 /* 闽.mp3 */; };
 		7E210CED209D840700437453 /* K.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E210CAC209D840700437453 /* K.mp3 */; };
 		7E210CEE209D840700437453 /* 贵.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E210CAD209D840700437453 /* 贵.mp3 */; };
+		7E224277243068C000580BC6 /* opencv2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E58FA932407CCEF001E5C02 /* opencv2.a */; };
 		7E4DDC80241734E200051E34 /* svm.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DDC7D241734E200051E34 /* svm.xml */; };
 		7E4DDC81241734E200051E34 /* CNN_CHAR_MODEL.md in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DDC7E241734E200051E34 /* CNN_CHAR_MODEL.md */; };
 		7E4DDC82241734E200051E34 /* CNN_ZH63_MODEL.md in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DDC7F241734E200051E34 /* CNN_ZH63_MODEL.md */; };
@@ -86,7 +87,6 @@
 		7E4DDC89241F705500051E34 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DDC88241F705500051E34 /* WelcomeView.swift */; };
 		7E4DDC8B241FA99400051E34 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DDC8A241FA99400051E34 /* TimeView.swift */; };
 		7E4DDC8D241FB30500051E34 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DDC8C241FB30500051E34 /* RecordsView.swift */; };
-		7E58FA942407CCEF001E5C02 /* opencv2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E58FA932407CCEF001E5C02 /* opencv2.a */; };
 		7E58FBD02407F42A001E5C02 /* HomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E58FBCF2407F42A001E5C02 /* HomeWindowController.swift */; };
 		7E58FBD22407F443001E5C02 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E58FBD12407F443001E5C02 /* HomeViewController.swift */; };
 		7E58FBD42407F497001E5C02 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E58FBD32407F497001E5C02 /* Constant.swift */; };
@@ -839,8 +839,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E58FA942407CCEF001E5C02 /* opencv2.a in Frameworks */,
 				7E82D3202425CCE200D51663 /* Sparkle.framework in Frameworks */,
+				7E224277243068C000580BC6 /* opencv2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2557,9 +2557,11 @@
 		7E71AE462089B1C100AA0CB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
@@ -2591,9 +2593,11 @@
 		7E71AE472089B1C100AA0CB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;

@@ -166,7 +166,8 @@ class ImageViewController: NSViewController {
         }
     }
     
-    func showAlert() {
+    // 路径有误时处理
+    private func showAlert() {
         // alert提醒
         let alert = NSAlert()
         alert.alertStyle = .warning
@@ -182,7 +183,7 @@ class ImageViewController: NSViewController {
        }
     }
     
-    func updateUI(plateModel: PlateInfoModel) {
+   private func updateUI(plateModel: PlateInfoModel) {
         charsView.updateUI(charsArray: plateModel.charsArray)
         platesView.updateUI(plateModels: dictModels)
         plateDetailView.updateUI(plateModel: plateModel)
@@ -224,29 +225,34 @@ extension ImageViewController {
     
     // 播放车牌号码
     func playPlateSound(license: NSString) {
+        
+        
+      for i in 0...6 {
+          // 加载音效
+          let audioName = license.substring(with: NSMakeRange(i, 1))
+          guard let audioFileUrl = Bundle.main.url(forResource: audioName, withExtension: "mp3") else { return }
+
+          do {
+              soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+              soundPlayer?.prepareToPlay()
+              soundPlayer?.enableRate = true
+              soundPlayer?.rate = 2.0
+              soundPlayer?.prepareToPlay()
+          } catch {
+              print("Sound player not available: \(error)")
+          }
+
+          // 播放
+          soundPlayer?.play()
+
+          while(soundPlayer!.isPlaying) {
+
+          }
+        
+        }
        
         
-        for i in 0...6 {
-            // 加载音效
-            let audioName = license.substring(with: NSMakeRange(i, 1))
-            guard let audioFileUrl = Bundle.main.url(forResource: audioName, withExtension: "mp3") else { return }
-            
-            do {
-                soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
-                soundPlayer?.enableRate = true
-                soundPlayer?.rate = 2.0
-                soundPlayer?.prepareToPlay()
-            } catch {
-                print("Sound player not available: \(error)")
-            }
-            
-            // 播放
-            soundPlayer?.play()
-            
-            while(soundPlayer!.isPlaying) {
-                
-            }
-        }
+      
     }
     
 }

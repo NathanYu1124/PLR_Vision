@@ -1130,7 +1130,7 @@
                                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="poi-Ps-a77">
                                                 <rect key="frame" x="10" y="10" width="70" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <buttonCell key="cell" type="square" title="识别" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="y8h-kM-zgd">
+                                                <buttonCell key="cell" type="square" title="识别" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" sound="Ping" inset="2" id="y8h-kM-zgd">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="15" name="Baloo-Regular"/>
                                                 </buttonCell>
@@ -28845,5 +28845,6 @@ AGcAAAAAAAAAAAAAAAAAGICOA
         <image name="videoPlay" width="1102" height="866"/>
         <image name="video_selected" width="128" height="128"/>
         <image name="wave_1" width="200" height="113"/>
+        <sound name="Ping"/>
     </resources>
 </document>
