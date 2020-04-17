@@ -174,7 +174,7 @@ extension VideoViewController: DetailViewProtocal {
         // 播放时不再可交互
         sender.isEnabled = false
         
-        AudioTool.playPlateSound(license: license as NSString, sender: sender)
+        AudioTool.playPlateSound(license: license as NSString)
         
     }
     
@@ -236,26 +236,26 @@ extension VideoViewController {
     
     // 视频流分析
     func analyseVideo() {
-        self.finished = false
-        
-        if let path = videoPath {
-            
-            // 后台处理视频
-            DispatchQueue.global().async {
-                ImageConverter.startAnalyseVideo(path)
-                self.finished = true
-                
-                // 当前无视频正在播放
-                self.isPlaying = false
-            }
-            
-            updataVideoFrame()
-            timer = Timer.scheduledTimer(timeInterval: 1/30, target: self, selector: #selector(updataVideoFrame), userInfo: nil, repeats: true)
-            timer?.fire()
-            
-            // 更改主按钮状态为停止
-            self.selectButton.state = .stop
-        }
+//        self.finished = false
+//        
+//        if let path = videoPath {
+//            
+//            // 后台处理视频
+//            DispatchQueue.global().async {
+//                ImageConverter.startAnalyseVideo(path)
+//                self.finished = true
+//                
+//                // 当前无视频正在播放
+//                self.isPlaying = false
+//            }
+//            
+//            updataVideoFrame()
+//            timer = Timer.scheduledTimer(timeInterval: 1/30, target: self, selector: #selector(updataVideoFrame), userInfo: nil, repeats: true)
+//            timer?.fire()
+//            
+//            // 更改主按钮状态为停止
+//            self.selectButton.state = .stop
+//        }
     }
     
     // 更新视频帧

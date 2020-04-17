@@ -25,8 +25,6 @@
 
 
 
-
-
 //-------------sobel定位------------------
 
 // sobel对车牌定位
@@ -85,6 +83,10 @@ vector<NYPlate> NYPlateLocate::plateLocateWithSobel(Mat src)
         
         // 尺寸标准化
         Mat src_resized = resizeToNormalSize(subRegion);
+        
+        if (src_resized.empty()) {
+            cout << "NYPlateLocate: 截取车牌图像失败！" << endl;
+        }
 
         // 初始化plate
         NYPlate plate;

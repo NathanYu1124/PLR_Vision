@@ -8,7 +8,7 @@
 
 #include "NYPlateDetect.hpp"
 
-// 检测车牌
+// 检测图片中的车牌
 vector<NYPlate> NYPlateDetect::detectPlates(Mat src)
 {
     vector<NYPlate> platesVec;
@@ -18,6 +18,7 @@ vector<NYPlate> NYPlateDetect::detectPlates(Mat src)
     NYPlateLocate locater;
     NYPlateJudge judge;
     
+    // 初始化svm模型地址
     judge.SVM_MODEL_PATH = svmModelPath;
     
     // 颜色定位
@@ -42,6 +43,25 @@ vector<NYPlate> NYPlateDetect::detectPlates(Mat src)
     for (int i = 0; i < platesVec.size(); i++) {
         
     }
+    
+    return platesVec;
+}
+
+// 检测视频流中的车牌: 牺牲精度，提高处理速度
+vector<NYPlate> NYPlateDetect::detectPlatesInVideo(Mat src)
+{
+    vector<NYPlate> platesVec;
+    
+    NYPlateLocate locater;
+    NYPlateJudge judge;
+    
+    // 初始化svm模型地址
+    judge.SVM_MODEL_PATH = svmModelPath;
+    
+    // 仅sobel定位
+    platesVec = locater.plateLocateWithSobel(src);
+    platesVec = judge.judgePlates(platesVec);
+    reProcessPlates(src, platesVec);
     
     return platesVec;
 }
@@ -90,12 +110,6 @@ vector<NYPlate> NYPlateDetect::deleteRepeatPlates(vector<NYPlate> colorVec, vect
         
         return resultVec;
     }
-}
-
-// 将车牌输出到指定目录
-void NYPlateDetect::outputPlates(vector<NYPlate> platesVec)
-{
-    
 }
 
 // 车牌区域精定位
@@ -235,6 +249,11 @@ void NYPlateDetect::reProcessPlates(Mat src, vector<NYPlate> &plates)
     }
 }
 
+// 初始化svm模型地址
+void NYPlateDetect::setSVMModelPath(string svmPath)
+{
+    svmModelPath = svmPath;
+}
 
 
 

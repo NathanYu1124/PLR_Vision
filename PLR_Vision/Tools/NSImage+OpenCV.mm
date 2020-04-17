@@ -90,6 +90,9 @@
     if (cvMat.channels() > 1) {
         cv::cvtColor(cvMat, cvMat, cv::COLOR_BGR2RGB);
     }
+    
+    
+    
     NSData *data = [NSData dataWithBytes:cvMat.data length:cvMat.elemSize() * cvMat.total()];
     
     CGColorSpaceRef colorSpace;

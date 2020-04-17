@@ -18,14 +18,32 @@ class CharsView: NSView {
     @IBOutlet weak var charCell_6: CharCell!
     @IBOutlet weak var charCell_7: CharCell!
     
-
+    @IBOutlet var contentView: NSView!
+    
+    // MARK: - init
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "CharsView"), bundle: Bundle(for: type(of: self)))
+        nib?.instantiate(withOwner: self, topLevelObjects: nil)
+        addSubview(contentView)
+        
+    }
+    
+    // 背景颜色
+    var backgroundColor = L_Yellow
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
+        
+        self.wantsLayer = true
+        self.layer?.backgroundColor = backgroundColor
+        self.layer?.cornerRadius = 20
     }
     
     
     func updateUI(charsArray: [charInfo]) {
+        
         charCell_1.updateUI(charInfo: charsArray[0])
         charCell_2.updateUI(charInfo: charsArray[1])
         charCell_3.updateUI(charInfo: charsArray[2])

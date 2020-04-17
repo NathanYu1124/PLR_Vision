@@ -18,7 +18,7 @@ class CharCell: NSView {
     @IBOutlet weak var charIconView: NSImageView!
     
     // Color
-    @IBInspectable var indicatorBackgroundColor: NSColor = NSColor(cgColor: L_Gray)!
+    @IBInspectable var indicatorBackgroundColor: NSColor = NSColor(cgColor: L_White)!
     @IBInspectable var indicatorColor: NSColor = NSColor(cgColor: L_Orange)!
     @IBInspectable var charColor: NSColor = NSColor(cgColor: L_White)!
     @IBInspectable var perLabelColor: NSColor = NSColor(cgColor: L_White)!
@@ -28,7 +28,6 @@ class CharCell: NSView {
     
     // didSet 修改百分比
     @IBInspectable var percentage: CGFloat = 50.0
-    
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

@@ -56,3 +56,10 @@ vector<string> NYCharacterRecognition::recognizeChars(vector<NYPlate> &plates)
     return licenses;
 }
 
+// 初始化CNN模型地址
+void NYCharacterRecognition::setCNNModelPath(string charPath, string zhPath)
+{
+    CNN_CHAR_MODEL_PATH = charPath;
+    CNN_ZH_MODEL_PATH = zhPath;
+}
+

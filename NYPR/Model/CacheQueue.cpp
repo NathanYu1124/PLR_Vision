@@ -11,6 +11,7 @@
 CacheQueue *CacheQueue::m_pCacheQueue = NULL;
 mutex CacheQueue::m_mutex;
 
+// 获取单例对象
 CacheQueue *CacheQueue::getInstance()
 {
     if (m_pCacheQueue == NULL) {
@@ -22,27 +23,30 @@ CacheQueue *CacheQueue::getInstance()
     return m_pCacheQueue;
 }
 
-// 队列中添加元素
-void CacheQueue::addFrameToQueue(cv::Mat frame)
+// 缓存队列添加帧
+void CacheQueue::addFrameToQueue(NYFrame frame)
 {
     frameQueue.push(frame);
 }
 
-// 获取队首元素
-Mat CacheQueue::getFrameFromQueue()
+
+// 获取队首缓存帧
+NYFrame CacheQueue::getFrameFromQueue()
 {
-    Mat out;
+    NYFrame outFrame;
     if (!frameQueue.empty()) {
-        out = frameQueue.front();
+        outFrame = frameQueue.front();
         frameQueue.pop();
     }
-    return out;
+    return outFrame;
 }
 
+// 缓存队列是否为空
 bool CacheQueue::isEmpty()
 {
     return frameQueue.empty();
 }
+
 
 int CacheQueue::getCurrentFrames()
 {

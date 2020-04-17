@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PlateDetailView" customModule="PLR_Vision" customModuleProvider="target">
+            <connections>
+                <outlet property="colorLabel" destination="85s-8w-49n" id="wlz-5V-uam"/>
+                <outlet property="contentView" destination="8jF-yE-kKb" id="Ymt-ry-Mbm"/>
+                <outlet property="plateLabel" destination="rCV-rd-nBB" id="WsA-ir-smu"/>
+                <outlet property="plateView" destination="une-Hj-Mhe" id="qay-Eu-Dgm"/>
+                <outlet property="provinceLabel" destination="0FH-ag-FOV" id="T7Z-zZ-pMi"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="8jF-yE-kKb">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="137"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tk-Vj-prw">
+                    <rect key="frame" x="10" y="0.0" width="152" height="137"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oJT-rM-cm7">
+                            <rect key="frame" x="23" y="113" width="106" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="102" id="6Qm-7o-ZTw"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="车牌识别分析" id="g47-cf-ulF">
+                                <font key="font" size="17" name="STSongti-SC-Black"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="une-Hj-Mhe">
+                            <rect key="frame" x="6" y="55" width="140" height="53"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="jVv-Pb-gyT"/>
+                        </imageView>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="g1B-Ak-f4P">
+                            <rect key="frame" x="0.0" y="0.0" width="152" height="50"/>
+                            <subviews>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qLf-Wy-Tyk" userLabel="Wave View">
+                                    <rect key="frame" x="0.0" y="0.0" width="152" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="bjV-w5-glv"/>
+                                    </constraints>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="wave_1" id="oIH-uP-SpB"/>
+                                </imageView>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6M-Aa-ZBM" userLabel="audioButton">
+                                    <rect key="frame" x="63" y="9" width="32" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="radio" imagePosition="overlaps" alignment="center" alternateImage="radio_highlighted" imageScaling="proportionallyUpOrDown" inset="2" id="DRy-9Q-UA3">
+                                        <behavior key="behavior" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="playLicenseSound:" target="-2" id="ue4-Q3-wU9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="qLf-Wy-Tyk" firstAttribute="top" secondItem="g1B-Ak-f4P" secondAttribute="top" id="7z1-rZ-hRc"/>
+                                <constraint firstItem="qLf-Wy-Tyk" firstAttribute="leading" secondItem="g1B-Ak-f4P" secondAttribute="leading" id="Etw-pN-oUX"/>
+                                <constraint firstAttribute="trailing" secondItem="qLf-Wy-Tyk" secondAttribute="trailing" id="PYa-pR-oax"/>
+                                <constraint firstAttribute="bottom" secondItem="qLf-Wy-Tyk" secondAttribute="bottom" id="hiT-cg-Tdz"/>
+                            </constraints>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="une-Hj-Mhe" firstAttribute="centerX" secondItem="g1B-Ak-f4P" secondAttribute="centerX" id="2Wh-UR-tOX"/>
+                        <constraint firstItem="oJT-rM-cm7" firstAttribute="leading" secondItem="8tk-Vj-prw" secondAttribute="leading" constant="25" id="NyS-OF-YCN"/>
+                        <constraint firstItem="une-Hj-Mhe" firstAttribute="leading" secondItem="8tk-Vj-prw" secondAttribute="leading" constant="6" id="b89-Bg-T2t"/>
+                        <constraint firstItem="une-Hj-Mhe" firstAttribute="top" secondItem="oJT-rM-cm7" secondAttribute="bottom" constant="5" id="bV1-d2-7sX"/>
+                        <constraint firstItem="oJT-rM-cm7" firstAttribute="centerX" secondItem="une-Hj-Mhe" secondAttribute="centerX" id="iNC-aS-tSu"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FE2-LU-dtO">
+                    <rect key="frame" x="206" y="10" width="139" height="119"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyj-pw-qeR">
+                            <rect key="frame" x="0.0" y="95" width="139" height="24"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KoV-wQ-3bY">
+                                    <rect key="frame" x="-2" y="0.0" width="68" height="24"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="识别结果:" id="av5-hz-gMd">
+                                        <font key="font" size="15" name="Baloo-Regular"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rCV-rd-nBB">
+                                    <rect key="frame" x="72" y="0.0" width="69" height="24"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="吉AFF052" id="U08-uU-qme">
+                                        <font key="font" size="15" name="Baloo-Regular"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="KoV-wQ-3bY" firstAttribute="top" secondItem="yyj-pw-qeR" secondAttribute="top" id="8bl-qN-t5e"/>
+                            </constraints>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLL-Wc-NOM">
+                            <rect key="frame" x="0.0" y="48" width="104" height="24"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4dm-hD-qNY">
+                                    <rect key="frame" x="-2" y="0.0" width="68" height="24"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="车牌颜色:" id="RWy-Zp-Ocg">
+                                        <font key="font" size="15" name="Baloo-Regular"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="85s-8w-49n">
+                                    <rect key="frame" x="72" y="0.0" width="34" height="24"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="蓝色" id="2SK-B6-MK9">
+                                        <font key="font" size="15" name="Baloo-Regular"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUQ-bo-hzV">
+                            <rect key="frame" x="0.0" y="0.0" width="104" height="24"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TzT-Os-lCA">
+                                    <rect key="frame" x="-2" y="0.0" width="68" height="24"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="所属省份:" id="3GR-jP-FVE">
+                                        <font key="font" size="15" name="Baloo-Regular"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0FH-ag-FOV">
+                                    <rect key="frame" x="72" y="0.0" width="34" height="24"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="广东" id="Fby-pi-YMu">
+                                        <font key="font" size="15" name="Baloo-Regular"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FE2-LU-dtO" secondAttribute="trailing" constant="15" id="192-My-XWs"/>
+                <constraint firstItem="8tk-Vj-prw" firstAttribute="top" secondItem="8jF-yE-kKb" secondAttribute="top" id="Les-Rp-bBa"/>
+                <constraint firstItem="8tk-Vj-prw" firstAttribute="leading" secondItem="8jF-yE-kKb" secondAttribute="leading" constant="10" id="XWT-Wo-FwS"/>
+                <constraint firstItem="FE2-LU-dtO" firstAttribute="top" secondItem="8jF-yE-kKb" secondAttribute="top" constant="8" id="cgW-zx-WOp"/>
+                <constraint firstAttribute="bottom" secondItem="8tk-Vj-prw" secondAttribute="bottom" id="qFX-hv-44Y"/>
+                <constraint firstAttribute="bottom" secondItem="FE2-LU-dtO" secondAttribute="bottom" constant="10" id="zOx-Db-Aov"/>
+            </constraints>
+            <point key="canvasLocation" x="120" y="153.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="radio" width="64" height="64"/>
+        <image name="radio_highlighted" width="128" height="128"/>
+        <image name="wave_1" width="230" height="64"/>
+    </resources>
+</document>

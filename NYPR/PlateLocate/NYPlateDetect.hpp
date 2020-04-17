@@ -18,12 +18,19 @@
 class NYPlateDetect {
     
 public:
-    // SVM模型地址 - 软件包中
-    string svmModelPath;
+  
+    // 初始化svm模型地址
+    void setSVMModelPath(string svmPath);
+    
     // 检测给定图片上的车牌 (综合sobel与颜色识别)
     vector<NYPlate> detectPlates(Mat src);
     
+    // 检测视频流中的车牌: 牺牲精度，提高处理速度
+    vector<NYPlate> detectPlatesInVideo(Mat src);
+    
 private:
+    
+    string svmModelPath;   // SVM模型地址
     
     NYPlateLocate locater;
     
@@ -32,9 +39,6 @@ private:
     
     // 车牌精定位
     void reProcessPlates(Mat src, vector<NYPlate> &plates);
-    
-    // 将车牌输出到指定目录中
-    void outputPlates(vector<NYPlate> platesVec);
 };
 
 

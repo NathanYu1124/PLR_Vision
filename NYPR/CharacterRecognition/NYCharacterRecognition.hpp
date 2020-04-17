@@ -17,10 +17,9 @@ class NYCharacterRecognition {
     
     
 public:
-    // cnn字符模型地址 - 软件包中
-    string CNN_CHAR_MODEL_PATH;
-    // cnn汉字模型地址 - 软件包中
-    string CNN_ZH_MODEL_PATH;
+    
+    // 初始化CNN模型路径
+    void setCNNModelPath(string charPath, string zhPath);
     
     // 车牌字符识别
     vector<string> recognizeChars(vector<NYPlate> &plates);
@@ -29,6 +28,9 @@ public:
     string recognizeChars(NYPlate plate);
     
 private:
+    
+    string CNN_CHAR_MODEL_PATH;     // cnn字符-数字模型地址
+    string CNN_ZH_MODEL_PATH;       // cnn中文模型地址
     
     NYCharacterJudge charJudge();
     

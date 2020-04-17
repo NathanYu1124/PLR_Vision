@@ -14,8 +14,11 @@ import AppKit
 class AudioTool: NSObject {
     static var soundPlayer: AVAudioPlayer?
     
+    private static var play = false
     
-    class func playPlateSound(license: NSString, sender: NSButton) {
+    class func playPlateSound(license: NSString) {
+        
+        play = true
         
         DispatchQueue.global().async {
             for i in 0...6 {
@@ -25,7 +28,10 @@ class AudioTool: NSObject {
                 
                 do {
                     soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+                    soundPlayer?.enableRate = true
+                    soundPlayer?.rate = 2.5
                     soundPlayer?.prepareToPlay()
+                    
                 } catch {
                     print("Sound player not available: \(error)")
                 }
@@ -38,12 +44,12 @@ class AudioTool: NSObject {
                 }
             }
             
-            DispatchQueue.main.async {
-                sender.image = NSImage(named: NSImage.Name(rawValue: "audio_off"))
-                sender.isEnabled = true
-            }
-            
+            play = false
         }
-        
+    }
+    
+    
+    class func isPlaying() -> Bool {
+        return play
     }
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +22,7 @@
                     <rect key="frame" x="69" y="10" width="179" height="24"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" id="Due-gc-z0f">
-                        <font key="font" metaFont="system" size="14"/>
+                        <font key="font" metaFont="menu" size="14"/>
                         <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -35,12 +36,6 @@
                     </buttonCell>
                 </button>
             </subviews>
-            <connections>
-                <outlet property="iconImageView" destination="3ST-R8-mAj" id="5xi-GV-lYK"/>
-                <outlet property="imageView" destination="3ST-R8-mAj" id="5Hh-8Y-SSG"/>
-                <outlet property="textField" destination="d1I-ya-BPs" id="bdj-1S-jSq"/>
-                <outlet property="textLabel" destination="d1I-ya-BPs" id="s6g-Z6-pHn"/>
-            </connections>
             <point key="canvasLocation" x="155.5" y="118.5"/>
         </tableCellView>
     </objects>

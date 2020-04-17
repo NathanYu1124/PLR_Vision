@@ -19,6 +19,7 @@ using namespace std;
 using namespace cv;
 using namespace Utils;
 
+// 车牌类
 class NYPlate {
     
 public:

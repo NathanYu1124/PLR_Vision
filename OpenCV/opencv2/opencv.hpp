@@ -51,8 +51,9 @@
 // Core library is always included --> without no OpenCV functionality available
 #include "opencv2/core.hpp"
 
+
 // Then the optional modules are checked
-#ifdef HAVE_OPENCV_HIGHGUI
+#ifdef HAVE_OPENCV_ML
 #include "opencv2/ml.hpp"
 #endif
 #ifdef HAVE_OPENCV_IMGCODECS
@@ -63,6 +64,21 @@
 #endif
 #ifdef HAVE_OPENCV_PHOTO
 #include "opencv2/photo.hpp"
+#endif
+#ifdef HAVE_OPENCV_VIDEO
+#include "opencv2/video.hpp"
+#endif
+#ifdef HAVE_OPENCV_VIDEOIO
+#include "opencv2/videoio.hpp"
+#endif
+#ifdef HAVE_OPENCV_VIDEOSTAB
+#include "opencv2/videostab.hpp"
+#endif
+#ifdef HAVE_OPENCV_VIZ
+#include "opencv2/viz.hpp"
+#endif
+#ifdef HAVE_OPENCV_FEATURES2D
+#include "opencv2/features2d.hpp"
 #endif
 
 #endif

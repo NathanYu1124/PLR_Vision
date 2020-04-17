@@ -24,7 +24,8 @@ NYPlate::NYPlate()
 // 车牌Mat
 void NYPlate::setPlateMat(Mat src)
 {
-    plateMat = src;
+    // 使用 copyTo 函数
+    src.copyTo(plateMat);
 }
 
 Mat NYPlate::getPlateMat()

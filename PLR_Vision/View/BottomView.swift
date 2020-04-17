@@ -10,15 +10,11 @@ import Cocoa
 
 class BottomView: NSView {
     
-    
-    
-    @IBInspectable var imageView: NSImageView!
-
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
         
-
+        // 绘制底部弧形
         let path = NSBezierPath()
         path.lineWidth = 1.0
         NSColor(cgColor: L_Orange)?.set()

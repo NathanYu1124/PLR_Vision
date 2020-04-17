@@ -33,7 +33,7 @@ public:
     // SVM识别真正的车牌
     vector<NYPlate> judgePlates(vector<NYPlate> potentialVec);
     
-    // 训练SVM模型 --- 训练功能待分离
+    // ********** 训练SVM模型 --- 训练功能待分离
     int trainSVMModel();
     
 private:
@@ -41,10 +41,10 @@ private:
     // 提取HOG特征
     void getHOGFeatures(Mat src, Mat& feature);
     
-    // 加载待训练的非车牌 --- 训练功能待分离
+    // ********** 加载待训练的非车牌 --- 训练功能待分离
     void getNoPlates(Mat& trainingMat, vector<int>& trainingLabels);
     
-    // 加载待训练的车牌 --- 训练功能待分离
+    // ********** 加载待训练的车牌 --- 训练功能待分离
     void getPlates(Mat& trainingMat, vector<int>& trainingLabels);
     
 };

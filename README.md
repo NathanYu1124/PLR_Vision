@@ -31,11 +31,7 @@ Github的[Release](https://github.com/NathanYu1124/PLR_Vision/releases)页面已
 
 ## 注意事项
 
-PLR Vision项目所使用的OpenCV静态库是由ios版本的OpenCV framework修改而来，参见该[教程](https://blog.voidmain.guru/posts/2014-07-16-learn-with-prof-g-framework-and-static-lib/)。
-
-* 由于Xcode 11.4版本对项目使用的静态库作出强制限制，故该项目目前无法在Xcode 11.4版本正常运行
-* PLR Vision的xcode项目需运行在Xcode 11.3及以下版本
-* 后续将在macOS下通过CMake编译OpenCV源码获取macOS下的OpenCV 静态库
+* 当前分支为v2.0.2的测试版备份，v2.0.2正式版很快会完成并推送。
 
 
 

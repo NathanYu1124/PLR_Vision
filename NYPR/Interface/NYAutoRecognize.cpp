@@ -37,75 +37,89 @@ void NYAutoRecognize::analyseVideo(std::string videoPath)
     // 加载视频
     VideoCapture capture(videoPath);
     if (!capture.isOpened()) {
-        cout << "can't open video!" << endl;
+        cout << "can't open video!!!" << endl;
         return;
     }
     
     Ptr<BackgroundSubtractorMOG2> bgsubtrator = createBackgroundSubtractorMOG2(20, 16, false);
-    
-//    Multiple commands produce '/Users/nathanyu/Library/Developer/Xcode/DerivedData/PLR_Vision-acfgolvptksthybbhmtwiwpnjjgk/Build/Products/Debug/PLR_Vision.app/Contents/Resources/license.txt':
-//    1) Target 'PLR_Vision' (project 'PLR_Vision') has copy command from '/Users/nathanyu/Documents/Projects/Mac/PLR_Vision-master/TinyDNN/cereal/external/rapidjson/license.txt' to '/Users/nathanyu/Library/Developer/Xcode/DerivedData/PLR_Vision-acfgolvptksthybbhmtwiwpnjjgk/Build/Products/Debug/PLR_Vision.app/Contents/Resources/license.txt'
-//    2) Target 'PLR_Vision' (project 'PLR_Vision') has copy command from '/Users/nathanyu/Documents/Projects/Mac/PLR_Vision-master/TinyDNN/cereal/external/rapidxml/license.txt' to '/Users/nathanyu/Library/Developer/Xcode/DerivedData/PLR_Vision-acfgolvptksthybbhmtwiwpnjjgk/Build/Products/Debug/PLR_Vision.app/Contents/Resources/license.txt'
 
-    int frameFlag = 0;
+    int frameFlag = 1;      // 记录视频当前处理帧数
     
     while (isAnalysing) {
         
-        
         Mat frame, srcImage, result;
         Mat mask;
-        if (!capture.read(frame)) {
-            break;
-        }
         
-        Mat src_gray;
-        cvtColor(frame, src_gray, COLOR_BGR2GRAY);
-        frame.copyTo(result);
-        bgsubtrator->apply(frame, mask);
-        
-        medianBlur(mask, mask, 5);
-        
-        morphologyEx(mask, mask, MORPH_CLOSE, getStructuringElement(MORPH_RECT, Size(15, 15)));
-        morphologyEx(mask, mask, MORPH_OPEN, getStructuringElement(MORPH_RECT, Size(5, 5)));
-        dilate(mask, mask, getStructuringElement(MORPH_RECT, Size(5, 5)));
-        threshold(mask, mask, 0, 255, THRESH_BINARY + THRESH_OTSU);
-        
-        mask.copyTo(srcImage);
-        vector<vector<Point>> contours;
-        findContours(srcImage, contours, RETR_EXTERNAL, CHAIN_APPROX_NONE);
-        if (contours.size() < 1) {
-            continue;
-        }
-        
-        Rect rct;
-        
-        sort(contours.begin(), contours.end(),[](vector<Point> p1, vector<Point> p2){
-            return contourArea(p1) > contourArea(p2);
-        });
-        
-        // 当前帧筛选出的区域
-        vector<Rect> currentRects;
-        for (int i = 0; i < contours.size(); i++) {
-            // 第i个连通分量的外接矩阵面积小于最大面积的1/6，则认为是伪目标
-            if (contourArea(contours[i]) < contourArea(contours[0]) / 4) {
-                break;
+        // 循环读取视频帧
+        while (capture.read(frame)) {
+            Mat src_gray;
+            cvtColor(frame, src_gray, COLOR_BGR2GRAY);
+            frame.copyTo(result);
+            bgsubtrator->apply(frame, mask);
+            
+            medianBlur(mask, mask, 5);
+
+            morphologyEx(mask, mask, MORPH_CLOSE, getStructuringElement(MORPH_RECT, Size(15, 15)));
+            morphologyEx(mask, mask, MORPH_OPEN, getStructuringElement(MORPH_RECT, Size(5, 5)));
+            dilate(mask, mask, getStructuringElement(MORPH_RECT, Size(5, 5)));
+            threshold(mask, mask, 0, 255, THRESH_BINARY + THRESH_OTSU);
+
+            mask.copyTo(srcImage);
+            vector<vector<Point>> contours;
+            findContours(srcImage, contours, RETR_EXTERNAL, CHAIN_APPROX_NONE);
+            if (contours.size() < 1) {
+                continue;
+            }
+
+            Rect rct;
+
+            sort(contours.begin(), contours.end(),[](vector<Point> p1, vector<Point> p2){
+                return contourArea(p1) > contourArea(p2);
+            });
+
+            // 当前帧筛选出的区域
+            vector<Rect> currentRects;
+            for (int i = 0; i < contours.size(); i++) {
+                // 第i个连通分量的外接矩阵面积小于最大面积的1/6，则认为是伪目标
+                if (contourArea(contours[i]) < contourArea(contours[0]) / 4) {
+                    break;
+                }
+
+                // 包含轮廓的最小矩阵
+                rct = boundingRect(contours[i]);
+                rectangle(result, rct, Scalar(0,255,0), 2);
             }
             
-            // 包含轮廓的最小矩阵
-            rct = boundingRect(contours[i]);
-            rectangle(result, rct, Scalar(0,255,0), 2);
+            // 获取视频信息
+            int frameWidth = capture.get(CAP_PROP_FRAME_WIDTH);         // 帧宽
+            int frameHeight = capture.get(CAP_PROP_FRAME_HEIGHT);       // 帧高
+            int frameCount = capture.get(CAP_PROP_FRAME_COUNT);         // 总帧数
+            int fps = capture.get(CAP_PROP_FPS);                        // 帧率
+                        
+            // 保存帧信息
+            NYFrame saveFrame = NYFrame(frameCount, frameFlag, fps);
+            saveFrame.setFrameHeight(frameHeight);
+            saveFrame.setFrameWidth(frameWidth);
+            saveFrame.setOriFrameMat(frame);
+            saveFrame.setCurrentFrameMat(result);
+            
+            
+            // 隔帧处理检测车牌，提高处理速度
+            if (frameFlag % 4 == 0) {
+//                Mat below = frame(Rect(5, frame.rows * 4/5, frame.cols - 10, frame.rows * 1/5 - 5));
+                
+                vector<NYPlate> plates = recognizeVideoPlate(frame);
+
+                saveFrame.setPlatesVec(plates);
+            }
+            
+            
+            
+            frameQueue->addFrameToQueue(saveFrame);
+            frameFlag++;
         }
         
-        // 添加渲染帧到缓存区
-        frameQueue->addFrameToQueue(result);
-        
-        if (frameFlag % 2 == 0) {
-            Mat below = frame(Rect(5, frame.rows * 4/5, frame.cols - 10, frame.rows * 1/5 - 5));
-            vector<NYPlate> plates = recognizeVideoPlate(below);
-            frameQueue->addPlatesToCache(plates);
-        }
-        
-        frameFlag++;
+        isAnalysing = false;    // 退出视频处理循环
     }
 }
 
@@ -126,32 +140,36 @@ bool NYAutoRecognize::isSameRegion(cv::Rect r1, cv::Rect r2)
     }
 }
 
-// 识别视频帧中的车牌
+// 识别视频帧中的车牌: 牺牲精度，提高处理速度
 vector<NYPlate> NYAutoRecognize::recognizeVideoPlate(cv::Mat &src)
 {
     NYPlateDetect detecter;
     NYCharacterRecognition charsJudge;
     
+    // 初始化模型地址
+    detecter.setSVMModelPath(svmModelPath);
+    charsJudge.setCNNModelPath(CNN_CHAR_MODEL_PATH, CNN_ZH_MODEL_PATH);
+    
     // 缩放图片
     Mat src_cp = src.clone();
-    scaleHDImage(src_cp);
+//    scaleFrameOfVideo(src_cp);
     
     // 获取SVM筛选过的所有车牌
-    vector<NYPlate> plates = detecter.detectPlates(src_cp);
+    vector<NYPlate> plates = detecter.detectPlatesInVideo(src_cp);
     
-    // 识别所有车牌上的字符
-    charsJudge.recognizeChars(plates);
+//    // 识别所有车牌上的字符
+//    charsJudge.recognizeChars(plates);
     
-    // 剔除部分车牌
-    vector<NYPlate>::iterator plate_itr = plates.begin();
-    while (plate_itr != plates.end()) {
-        NYPlate &plt = *plate_itr;
-        if (plt.getPlateChars().size() != 7) {
-            plate_itr = plates.erase(plate_itr);
-        } else {
-            plate_itr++;
-        }
-    }
+//    // 剔除部分车牌
+//    vector<NYPlate>::iterator plate_itr = plates.begin();
+//    while (plate_itr != plates.end()) {
+//        NYPlate &plt = *plate_itr;
+//        if (plt.getPlateChars().size() != 7) {
+//            plate_itr = plates.erase(plate_itr);
+//        } else {
+//            plate_itr++;
+//        }
+//    }
     
 //    // 绘制车牌位置
 //    for (int i = 0; i < plates.size(); i++) {
@@ -159,14 +177,15 @@ vector<NYPlate> NYAutoRecognize::recognizeVideoPlate(cv::Mat &src)
 //        rect.angle = 0;
 //
 //        if (plates[i].getPlateChars().size() == 7) {
-//            rectangle(src, rect.boundingRect(), Scalar(0,0,255), 2);
+//            rectangle(src, rect.boundingRect(), Scalar(0,255,255), 4);
 //        }
 //    }
     
     return plates;
 }
 
-vector<NYPlate> NYAutoRecognize::recognizePlateNumber(cv::Mat src, string svmPath, string cnnCharPath, string cnnZHPath)
+// 识别图片中的车牌
+vector<NYPlate> NYAutoRecognize::recognizePlateNumber(cv::Mat src)
 {
     NYPlateDetect detecter;
     NYCharacterRecognition charsJudge;
@@ -176,21 +195,19 @@ vector<NYPlate> NYAutoRecognize::recognizePlateNumber(cv::Mat src, string svmPat
     scaleHDImage(src_cp);
     
     // 初始化SVM模型地址
-    detecter.svmModelPath = svmPath;
+    detecter.setSVMModelPath(svmModelPath);
     
     // 获取SVM筛选过的所有车牌
     vector<NYPlate> plates = detecter.detectPlates(src_cp);
     
     // 初始化CNN字符模型地址
-    charsJudge.CNN_CHAR_MODEL_PATH = cnnCharPath;
-    charsJudge.CNN_ZH_MODEL_PATH = cnnZHPath;
-    
+    charsJudge.setCNNModelPath(CNN_CHAR_MODEL_PATH, CNN_ZH_MODEL_PATH);
+   
     // 识别所有车牌上的字符
     charsJudge.recognizeChars(plates);
     
 //    cout << "before erase: " << plates.size() << endl;
-    
-    
+        
     // 剔除部分车牌
     vector<NYPlate>::iterator plate_itr = plates.begin();
     while (plate_itr != plates.end()) {
@@ -203,7 +220,6 @@ vector<NYPlate> NYAutoRecognize::recognizePlateNumber(cv::Mat src, string svmPat
     }
     
 //    cout << "after erase: " << plates.size() << endl;
-    
     
     // 绘制车牌位置
     for (int i = 0; i < plates.size(); i++) {
@@ -261,12 +277,7 @@ vector<string> NYAutoRecognize::recognizePlateNumber(Mat src, vector<vector<map<
     return licenses;
 }
 
-// 批处理所有图片并输出定位车牌
-void NYAutoRecognize::handleAllCars() {
-    
-}
-
-// 绘制车牌信息
+// 缓存车牌与字符图像
 void NYAutoRecognize::drawLicense(Mat &img, NYPlate plate, int index) {
     
     RotatedRect rect = plate.getPlatePos();
@@ -277,25 +288,36 @@ void NYAutoRecognize::drawLicense(Mat &img, NYPlate plate, int index) {
         rectangle(img, rect.boundingRect(), Scalar(0,0,255), 2);
     }
     
+    bool flag;
+    
     // 保存图片
     string drawPath = OUTPUT_PATH + "/drawcar.jpg";
-    imwrite(drawPath, img);
-    
+    flag = imwrite(drawPath, img);
+    if (!flag) {
+        cout << "缓存绘制的图片失败!" << endl;
+    }
 
     // 保存车牌
     Mat plr = plate.getPlateMat();
-    char plrPath[300];
+    char plrPath[800];
     sprintf(plrPath, "%s/plate%d.jpg", OUTPUT_PATH.c_str() ,index);
-    imwrite(plrPath, plr);
+    flag = imwrite(plrPath, plr);
+    if (!flag) {
+        cout << "缓存截取的车牌失败!" << endl;
+    }
+    
 
     // 保存字符
-    char charPath[300];
+    char charPath[800];
     sprintf(charPath, "%s/%dchar_", OUTPUT_PATH.c_str(), index);
     vector<NYCharacter> allChars = plate.getPlateChars();
-    char chPath[300];
+    char chPath[800];
     for (int i = 0; i < allChars.size(); i++) {
         sprintf(chPath, "%s%d.jpg", charPath, i);
-        imwrite(chPath, allChars[i].getCharacterMat());
+        flag = imwrite(chPath, allChars[i].getCharacterMat());
+        if (!flag) {
+            cout << "缓存分割的字符失败!" << endl;
+        }
     }
     
 }
@@ -313,6 +335,25 @@ void NYAutoRecognize::scaleHDImage(cv::Mat &src)
         
         cv::resize(src, src, Size(newWidth, newHeight), 0, 0);
     }
+}
+
+// 等比缩放视频帧，提高处理速度
+void NYAutoRecognize::scaleFrameOfVideo(Mat &src)
+{
+    double scaleRatio = 0.5;
+    int newWidth = int(src.cols * scaleRatio);
+    int newHeight = int(src.rows * scaleRatio);
+    
+    cv::resize(src, src, Size(newWidth, newHeight));
+}
+
+// 初始化模型路径
+void NYAutoRecognize::setModelPath(string cachePath, string svmPath, string charPath, string zhPath)
+{
+    OUTPUT_PATH = cachePath;
+    svmModelPath = svmPath;
+    CNN_CHAR_MODEL_PATH = charPath;
+    CNN_ZH_MODEL_PATH = zhPath;
 }
 
 

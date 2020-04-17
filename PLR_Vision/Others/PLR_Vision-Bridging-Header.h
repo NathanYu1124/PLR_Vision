@@ -10,11 +10,11 @@
 // OpenCV识别车牌号码
 +(NSMutableDictionary*)getPlateLicense: (NSString*)imgPath svmPath: (NSString*)svmModelPath charPath: (NSString*)charModelPath zhPath: (NSString*)zhModelPath outPath: (NSString*)cachePath;
 
-// OpenCV获取视频帧
-+(NSMutableDictionary *)getVideoFrame;
+// OpenCV处理视频流
++(BOOL)startAnalyseVideo: (NSString*)videoPath svmPath: (NSString*)svmModelPath charPath: (NSString*)charModelPath zhPath: (NSString*)zhModelPath outPath: (NSString*)cachePath;
 
-// OpenCV开始处理视频流
-+(BOOL)startAnalyseVideo: (NSString*)videoPath;
+// OpenCV获取视频帧
++(NSMutableDictionary*)getVideoFrame;
 
 // 停止视频处理并退出
 +(BOOL)stopAndQuit;

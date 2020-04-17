@@ -8,17 +8,14 @@
 
 import Foundation
 
-// MARK: -
+// MARK: - 窗口尺寸
 let HomeWidth : CGFloat = 1000
 let HomeHeight : CGFloat = 700
-
 let MenuViewWidth : CGFloat = 70
 
 
 // MARK: -  Custom Color
-
 // light mode
-// 246 160 29 --- 250 178 95
 let L_Yellow_D : CGColor = CGColor(red: 246 / 255, green: 160 / 255, blue: 29 / 255, alpha: 1.0)
 let L_Yellow : CGColor = CGColor(red: 250 / 255, green: 178 / 255, blue: 95 / 255, alpha: 1.0)
 let L_White : CGColor = CGColor(red: 249 / 255, green: 241 / 255, blue: 233 / 255, alpha: 1.0)  
@@ -29,7 +26,7 @@ let L_Blue : CGColor = CGColor(red: 56 / 255, green: 65 / 255, blue: 231 / 255, 
 
 // dark mode
 
-// MARK: - Paths
+// MARK: - 模型路径
 var SVM_MODEL_PATH: String!
 var CNN_CHAR_MODEL_PATH: String!
 var CNN_ZH_MODEL_PATH: String!

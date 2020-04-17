@@ -24,20 +24,17 @@ class ImageViewController: NSViewController {
     @IBOutlet weak var timeView: TimeView!
     @IBOutlet weak var contentView: NSView!
     @IBOutlet weak var recordsView: RecordsView!
-    @IBOutlet weak var audioButton: NSButton!
     
     private var preImage: NSImage!
     private var dictModels: [PlateInfoModel]!
     private var plateIndex: Int = 0
     private var records: Int = 0
-    
-    private var soundPlayer: AVAudioPlayer?
-    
+        
         
     // MARK: - View lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         // 初始-欢迎界面
         contentView.isHidden = true
         bottomView.wantsLayer = true
@@ -58,13 +55,6 @@ class ImageViewController: NSViewController {
         imageAreaView.wantsLayer = true
         imageAreaView.layer?.cornerRadius = 20
         imageAreaView.layer?.backgroundColor = L_Gray
-        
-        
-        // Chars View
-        charsView.wantsLayer = true
-        charsView.layer?.cornerRadius = 20
-        charsView.layer?.backgroundColor = CGColor(red: 250 / 255, green: 178 / 255, blue: 95 / 255, alpha: 0.8)
-
         
         changeView.wantsLayer = true
         changeView.layer?.cornerRadius = 20
@@ -203,56 +193,5 @@ class ImageViewController: NSViewController {
             updateUI(plateModel: dictModels[plateIndex])
         }
     }
-    
-    @IBAction func playSound(_ sender: NSButton) {
-        
-        if let player = soundPlayer {
-            if player.isPlaying { return }
-        }
-        
-        let currentLicense = dictModels[plateIndex].plateLicense! as NSString
-        
-        // 后台播放音乐
-        DispatchQueue.global().async {
-            self.playPlateSound(license: currentLicense)
-        }
-    }
-    
 }
 
-// MARK: - 音频处理
-extension ImageViewController {
-    
-    // 播放车牌号码
-    func playPlateSound(license: NSString) {
-        
-        
-      for i in 0...6 {
-          // 加载音效
-          let audioName = license.substring(with: NSMakeRange(i, 1))
-          guard let audioFileUrl = Bundle.main.url(forResource: audioName, withExtension: "mp3") else { return }
-
-          do {
-              soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
-              soundPlayer?.prepareToPlay()
-              soundPlayer?.enableRate = true
-              soundPlayer?.rate = 2.0
-              soundPlayer?.prepareToPlay()
-          } catch {
-              print("Sound player not available: \(error)")
-          }
-
-          // 播放
-          soundPlayer?.play()
-
-          while(soundPlayer!.isPlaying) {
-
-          }
-        
-        }
-       
-        
-      
-    }
-    
-}

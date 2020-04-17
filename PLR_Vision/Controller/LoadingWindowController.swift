@@ -21,7 +21,7 @@ class LoadingWindowController: NSWindowController {
         window!.center()
         
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+4) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
             
             
             
