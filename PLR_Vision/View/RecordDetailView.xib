@@ -124,7 +124,7 @@
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DUg-DT-XNA">
                                             <rect key="frame" x="55" y="5" width="40" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="radio" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xvK-Q3-CiG">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="radio" imagePosition="only" alignment="center" alternateImage="radio_highlighted" imageScaling="proportionallyUpOrDown" inset="2" id="xvK-Q3-CiG">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -176,6 +176,7 @@
     <resources>
         <image name="close_round" width="64" height="64"/>
         <image name="radio" width="64" height="64"/>
+        <image name="radio_highlighted" width="128" height="128"/>
         <image name="wave_1" width="230" height="64"/>
     </resources>
 </document>
