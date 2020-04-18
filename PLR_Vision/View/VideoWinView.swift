@@ -15,6 +15,7 @@ class VideoWinView: NSView {
     @IBOutlet weak var endLabel: NSTextField!
     @IBOutlet weak var videoView: NSImageView!
     @IBOutlet weak var progressBar: NSProgressIndicator!
+    
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

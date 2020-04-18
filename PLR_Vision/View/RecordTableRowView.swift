@@ -19,12 +19,12 @@ class RecordTableRowView: NSTableRowView {
         if selectionHighlightStyle != .none {
             
             let selectionRect = bounds.insetBy(dx: 2.5, dy: 2.5)
-//            NSColor(calibratedRed: 61 / 255, green: 159 / 255, blue: 219 / 255, alpha: 1.0).setStroke()
-            NSColor(red: 61 / 255, green: 159 / 255, blue: 219 / 255, alpha: 1.0).setFill()
+            
+            // CGColor(red: 250 / 255, green: 178 / 255, blue: 95 / 255, alpha: 0.85)
+            NSColor(red: 250 / 255, green: 178 / 255, blue: 95 / 255, alpha: 0.85).setFill()
             
             let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: 25, yRadius: 25)
             selectionPath.fill()
-//            selectionPath.stroke()
         }
     }
     

@@ -20,7 +20,7 @@ let L_Yellow_D : CGColor = CGColor(red: 246 / 255, green: 160 / 255, blue: 29 / 
 let L_Yellow : CGColor = CGColor(red: 250 / 255, green: 178 / 255, blue: 95 / 255, alpha: 1.0)
 let L_White : CGColor = CGColor(red: 249 / 255, green: 241 / 255, blue: 233 / 255, alpha: 1.0)  
 let L_Gray : CGColor = CGColor(red: 174 / 255, green: 161 / 255, blue: 174 / 255, alpha: 0.2)
-let L_Orange : CGColor = CGColor(red: 249 / 255, green: 60 / 255, blue: 26 / 255, alpha: 0.8)
+let L_Orange : CGColor = CGColor(red: 249 / 255, green: 60 / 255, blue: 26 / 255, alpha: 0.7)
 let L_Blue : CGColor = CGColor(red: 56 / 255, green: 65 / 255, blue: 231 / 255, alpha: 1.0)
 
 

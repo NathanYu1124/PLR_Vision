@@ -17,6 +17,8 @@ class StateWinView: NSView {
     
     @IBOutlet weak var resolutionStr: NSTextField!
     @IBOutlet weak var fpsLabel: NSTextField!
+    @IBOutlet weak var blueNumLabel: NSTextField!
+    @IBOutlet weak var yellowNumLabel: NSTextField!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -38,10 +40,11 @@ class StateWinView: NSView {
         
     }
     
-    func updateUI(frame: FrameModel) {
+    func updateUI(resolution: String, count: (blue: Int, yellow: Int)) {
         
-        resolutionStr.stringValue = frame.resolutionStr
-        
+        resolutionStr.stringValue = resolution
+        blueNumLabel.stringValue = "\(count.blue)个"
+        yellowNumLabel.stringValue = "\(count.yellow)个"
     }
     
 }

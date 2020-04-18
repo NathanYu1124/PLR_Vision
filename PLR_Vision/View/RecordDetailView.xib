@@ -10,8 +10,11 @@
             <connections>
                 <outlet property="backView" destination="t2f-gD-R9E" id="IhT-w3-6rr"/>
                 <outlet property="charsView" destination="GaL-61-FJW" id="Hst-6F-vbZ"/>
+                <outlet property="colorLabel" destination="5CO-xf-hrK" id="1Bw-Ly-Eu7"/>
                 <outlet property="contentView" destination="clf-NC-Vob" id="heo-KS-19K"/>
                 <outlet property="infoView" destination="v6O-LO-dPb" id="0GY-ie-Y9q"/>
+                <outlet property="licenseLabel" destination="Tr4-8T-qq3" id="yWx-Kg-RJr"/>
+                <outlet property="plateImageView" destination="Fvr-VC-jEC" id="FQn-Lg-Xqb"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -29,17 +32,6 @@
                                 <constraint firstAttribute="height" constant="320" id="nW0-TD-FqJ"/>
                             </constraints>
                         </customView>
-                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3lJ-TU-kSi">
-                            <rect key="frame" x="130" y="550" width="30" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="square" title="Close" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5B8-ky-R0M">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="dismissView:" target="-2" id="i5T-et-IfE"/>
-                            </connections>
-                        </button>
                         <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6O-LO-dPb">
                             <rect key="frame" x="5" y="333" width="280" height="215"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -153,6 +145,17 @@
                                 </textField>
                             </subviews>
                         </customView>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3lJ-TU-kSi">
+                            <rect key="frame" x="135" y="552" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="close_round" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5B8-ky-R0M">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="dismissView:" target="-2" id="i5T-et-IfE"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="GaL-61-FJW" secondAttribute="bottom" constant="5" id="WQS-1o-SQL"/>
@@ -171,6 +174,7 @@
         </customView>
     </objects>
     <resources>
+        <image name="close_round" width="64" height="64"/>
         <image name="radio" width="64" height="64"/>
         <image name="wave_1" width="230" height="64"/>
     </resources>

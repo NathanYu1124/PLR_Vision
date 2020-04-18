@@ -151,6 +151,7 @@
 		7EEE578F24488CB100257822 /* RecordTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEE578E24488CB100257822 /* RecordTableRowView.swift */; };
 		7EEE57932449795300257822 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEE57922449795300257822 /* RecordDetailView.swift */; };
 		7EEE579524498BD100257822 /* RecordDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EEE579424498BD100257822 /* RecordDetailView.xib */; };
+		7EEE5797244AEF2E00257822 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EEE5796244AEF2E00257822 /* WelcomeView.xib */; };
 		7EFB5F9F2442BAA700EFCAA0 /* VideoWinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB5F9E2442BAA700EFCAA0 /* VideoWinView.swift */; };
 		7EFB5FA22442C2C400EFCAA0 /* NYFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB5FA02442C2C400EFCAA0 /* NYFrame.cpp */; };
 /* End PBXBuildFile section */
@@ -866,6 +867,7 @@
 		7EEE578E24488CB100257822 /* RecordTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableRowView.swift; sourceTree = "<group>"; };
 		7EEE57922449795300257822 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
 		7EEE579424498BD100257822 /* RecordDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordDetailView.xib; sourceTree = "<group>"; };
+		7EEE5796244AEF2E00257822 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		7EFB5F9E2442BAA700EFCAA0 /* VideoWinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWinView.swift; sourceTree = "<group>"; };
 		7EFB5FA02442C2C400EFCAA0 /* NYFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NYFrame.cpp; sourceTree = "<group>"; };
 		7EFB5FA12442C2C400EFCAA0 /* NYFrame.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NYFrame.hpp; sourceTree = "<group>"; };
@@ -2180,6 +2182,7 @@
 				7E4DDC86241E6B1100051E34 /* PlateDetailView.swift */,
 				7EA3140124455928000574AF /* PlateDetailView.xib */,
 				7E4DDC88241F705500051E34 /* WelcomeView.swift */,
+				7EEE5796244AEF2E00257822 /* WelcomeView.xib */,
 				7E4DDC8A241FA99400051E34 /* TimeView.swift */,
 				7E4DDC8C241FB30500051E34 /* RecordsView.swift */,
 				7E7E633F2441ED070092DF21 /* StateWinView.swift */,
@@ -2373,6 +2376,7 @@
 				7E210CBE209D840700437453 /* 4.mp3 in Resources */,
 				7E210CB3209D840700437453 /* 渝.mp3 in Resources */,
 				7E210CE4209D840700437453 /* V.mp3 in Resources */,
+				7EEE5797244AEF2E00257822 /* WelcomeView.xib in Resources */,
 				7EB0980B20DAA46200A911D0 /* Info.plist in Resources */,
 				7E210CEE209D840700437453 /* 贵.mp3 in Resources */,
 				7E210CCF209D840700437453 /* 粤.mp3 in Resources */,
@@ -2632,7 +2636,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2648,7 +2652,7 @@
 					"@loader_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenCV";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inkinc.PLR-Vision";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";
@@ -2668,7 +2672,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2684,7 +2688,7 @@
 					"@loader_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenCV";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inkinc.PLR-Vision";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";

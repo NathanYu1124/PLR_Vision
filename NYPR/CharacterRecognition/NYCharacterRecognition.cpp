@@ -18,14 +18,20 @@ vector<string> NYCharacterRecognition::recognizeChars(vector<NYPlate> &plates)
     NYCharacterPartition charsDivider;
     NYCharacterJudge charsJudge = NYCharacterJudge(CNN_CHAR_MODEL_PATH, CNN_ZH_MODEL_PATH);
     
-    vector<NYCharacter> allChars;
     
     // 识别所有车牌上的字符
     for (int i = 0; i < plates.size(); i++) {
         plate_lic.clear();
         
+        vector<NYCharacter> allChars;
+        
         // 分割字符
-        allChars = charsDivider.divideCharacters(plates[i]);
+        bool flag = charsDivider.divideCharacters(plates[i], allChars);
+        if (flag == false) {
+            // 剔除问题车牌
+            
+            cout << "NYCharacterRecognition: 车牌字符分割有问题!" << endl;
+        }
                 
         map<string, float> res;
         if (allChars.size() == 7) {
@@ -50,6 +56,8 @@ vector<string> NYCharacterRecognition::recognizeChars(vector<NYPlate> &plates)
             plates[i].setPlateChars(allChars);
             
             licenses.push_back(plate_lic);
+        } else {
+//            cout << "NYCharacterRecognition: 字符个数不足7个!" << endl;
         }
     }
     

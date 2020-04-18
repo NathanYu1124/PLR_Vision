@@ -122,6 +122,11 @@ vector<NYPlate> NYPlateJudge::judgePlates(vector<NYPlate> potentialVec)
         
         // 将车牌Mat转化为预测的格式
         Mat src = pot_plate.getPlateMat();
+        
+        if (src.empty()) {
+            cout << "NYPlateLocate: 车牌Mat为空!" << endl;
+        }
+        
         Mat src_svm;
         src_svm.create(36, 136, CV_32FC1);
         resize(src, src_svm, src_svm.size(),0,0,INTER_CUBIC);

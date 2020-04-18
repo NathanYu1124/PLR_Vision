@@ -6,10 +6,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="BottomView" customModule="PLR_Vision" customModuleProvider="target">
+            <connections>
+                <outlet property="circleButton" destination="g4A-x2-sJV" id="bLu-JI-KfQ"/>
+                <outlet property="contentView" destination="dNm-0c-ba7" id="fxi-Gd-cJF"/>
+                <outlet property="shadowView" destination="Vue-L4-6YZ" id="A1p-gS-BOi"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="dNm-0c-ba7" customClass="BottomView" customModule="PLR_Vision" customModuleProvider="target">
+        <customView id="dNm-0c-ba7" userLabel="Custom View">
             <rect key="frame" x="0.0" y="0.0" width="930" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -24,6 +30,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" size="15" name="Baloo-Regular"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressed:" target="-2" id="6bG-L5-cHk"/>
+                            </connections>
                         </button>
                     </subviews>
                 </customView>

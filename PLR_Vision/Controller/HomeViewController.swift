@@ -77,10 +77,15 @@ class HomeViewController: NSViewController {
     
     @IBAction func settingButtonPressed(_ sender: MenuButton) {
         
-       if sender.state == .on {     // 从 off -> on : 黑 -> 白
-            let vc = getSelectedVC(button: selectedButton)
-            changeMenuButtonState(button: sender)
-            transition(from: vc, to: settingVC, options: .crossfade, completionHandler: nil)
+        if sender.state == .on {     // 从 off -> on : 黑 -> 白
+            
+            if videoVC.isAnalysingVideo {
+                showStopAlert(pressedButton: sender)
+            } else {
+                let vc = getSelectedVC(button: selectedButton)
+                changeMenuButtonState(button: sender)
+                transition(from: vc, to: settingVC, options: .crossfade, completionHandler: nil)
+            }
         }
     }
     
@@ -88,17 +93,28 @@ class HomeViewController: NSViewController {
     @IBAction func imageButtonPressed(_ sender: MenuButton) {
         
         if sender.state == .on {    // 从 off -> on : 黑 -> 白
-            let vc = getSelectedVC(button: selectedButton)
-            changeMenuButtonState(button: sender)
-            transition(from: vc, to: imageVC, options: .crossfade, completionHandler: nil)
+            
+            if videoVC.isAnalysingVideo {
+                showStopAlert(pressedButton: sender)
+            } else {
+                let vc = getSelectedVC(button: selectedButton)
+                changeMenuButtonState(button: sender)
+                transition(from: vc, to: imageVC, options: .crossfade, completionHandler: nil)
+            }
         }
     }
     
     @IBAction func aboutButtonPressed(_ sender: NSButton) {
-        view.addSubview(aboutVC.view)
+        
+        if videoVC.isAnalysingVideo {
+            showStopAlert(pressedButton: sender)
+        } else {
+            view.addSubview(aboutVC.view)
+        }
     }
     
-   private func changeMenuButtonState(button: MenuButton) {
+    private func changeMenuButtonState(button: MenuButton) {
+    
         selectedButton.performClick(selectedButton)     // 取消已选中按钮的on状态
         selectedButton = button
     }
@@ -112,10 +128,48 @@ class HomeViewController: NSViewController {
             return videoVC
         }
     }
+    
+    
+    func showStopAlert(pressedButton: NSButton) {
+                
+        // alert提醒
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.icon = NSImage(named: NSImage.Name(rawValue: "AppIcon"))
+        alert.addButton(withTitle: "退出")
+        alert.addButton(withTitle: "继续检测")
+        alert.messageText = "你想在完成检测前退出吗?"
+        alert.informativeText = "停止会中断当前检测过程，导致检测结果不完整"
+        alert.beginSheetModal(for: NSApplication.shared.keyWindow!) { (modalResponse) in
+           
+            if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {    // 退出
+                
+                // 先停止视频分析
+                if self.videoVC.isAnalysingVideo == true {
+                    ImageConverter.stopAndQuit()
+                    self.videoVC.isAnalysingVideo = false
+                }
+                
+                // 再切换视图: video -> image(setting, about)
+                if pressedButton == self.aboutButton {  // 切换到关于页面
+                    self.view.addSubview(self.aboutVC.view)
+                } else {
+                   
+                    let vc = self.getSelectedVC(button: pressedButton as! MenuButton)
+                    self.changeMenuButtonState(button: pressedButton as! MenuButton)
+                    self.transition(from: self.videoVC, to: vc, options: .crossfade, completionHandler: nil)
+                }
+        
+            } else if modalResponse == NSApplication.ModalResponse.alertSecondButtonReturn {    // 继续检测
+                
+                if pressedButton != self.aboutButton {
+                    self.selectedButton = pressedButton as! MenuButton
+                    self.changeMenuButtonState(button: self.videoButton)
+                }
+            }
+        }
+        
+    }
 }
 
-extension HomeViewController {
-    
-    
-}
 

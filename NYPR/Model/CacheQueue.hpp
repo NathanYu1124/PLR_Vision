@@ -26,9 +26,6 @@ public:
     // 获取单例对象
     static CacheQueue* getInstance();
     
-//    // 添加帧到缓存队列
-//    void addFrameToQueue(Mat frame);
-    
     // 添加帧到缓存队列
     void addFrameToQueue(NYFrame frame);
     
@@ -38,16 +35,8 @@ public:
     // 缓存队列是否为空
     bool isEmpty();
     
-    
+    // 获取当前缓存的帧数
     int getCurrentFrames();
-    
-    void addPlatesToCache(vector<NYPlate> plates);
-    
-    vector<NYPlate> getAllPlates();
-    
-    void addCarPicToCache(Mat src);
-    
-    Mat getCarFromQueue();
     
     // 清空缓存区
     bool clearCacheQueue();
@@ -59,9 +48,6 @@ private:
     static mutex m_mutex;   // 锁
     
     queue<NYFrame> frameQueue;        // 视频帧缓存队列
-    vector<NYPlate> platesCache;  // 识别车牌缓存
-    queue<Mat> carCache;       // 抓拍车辆缓存
-    
 };
 
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WelcomeView" customModule="PLR_Vision" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="c22-O7-iKe" id="BUJ-Pw-6zF"/>
+                <outlet property="logoImageView" destination="XjW-VC-WZd" id="nY6-r5-Lvb"/>
+                <outlet property="noticeLabel" destination="Wsq-1p-eLE" id="Yli-1A-pSC"/>
+                <outlet property="typeLable" destination="Bh6-DZ-Fl9" id="Lrc-E7-v4I"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="930" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bh6-DZ-Fl9">
+                    <rect key="frame" x="209" y="102" width="513" height="48"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="PLR Vision可识别的图像格式: png, jpg" id="hMy-5y-nNk">
+                        <font key="font" size="30" name="Baloo-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wsq-1p-eLE">
+                    <rect key="frame" x="315" y="69" width="301" height="28"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="注意: 图片路径中不能含有中文及空格" id="OmS-hr-9Nm">
+                        <font key="font" size="18" name="Baloo-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XjW-VC-WZd">
+                    <rect key="frame" x="165" y="100" width="600" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="8bs-9d-IPg"/>
+                        <constraint firstAttribute="height" constant="400" id="hh2-1x-Dop"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="mainlogo" id="Hxb-f1-jpP"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Wsq-1p-eLE" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="8Pn-HJ-ova"/>
+                <constraint firstItem="XjW-VC-WZd" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="9x2-cS-k7Z"/>
+                <constraint firstItem="Wsq-1p-eLE" firstAttribute="top" secondItem="Bh6-DZ-Fl9" secondAttribute="bottom" constant="5" id="Aff-fj-eR4"/>
+                <constraint firstItem="Bh6-DZ-Fl9" firstAttribute="top" secondItem="XjW-VC-WZd" secondAttribute="bottom" constant="-50" id="H47-43-umu"/>
+                <constraint firstItem="XjW-VC-WZd" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="lvU-6x-Fs2"/>
+                <constraint firstItem="Bh6-DZ-Fl9" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="zYM-73-uU1"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="154"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="mainlogo" width="800" height="600"/>
+    </resources>
+</document>

@@ -244,8 +244,8 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mCj-wv-GXD">
-                                        <rect key="frame" x="95" y="310" width="121" height="23"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Version  2.0.1" id="we3-IK-h5x">
+                                        <rect key="frame" x="95" y="310" width="124" height="23"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Version  2.0.2" id="we3-IK-h5x">
                                             <font key="font" metaFont="system" size="20"/>
                                             <color key="textColor" red="0.97647058823529409" green="0.94509803921568625" blue="0.9137254901960784" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1120,53 +1120,8 @@
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="lVN-pn-BG0" customClass="BottomView" customModule="PLR_Vision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="930" height="100"/>
-                                <subviews>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="00f-IJ-ki6">
-                                        <rect key="frame" x="420" y="10" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <subviews>
-                                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="poi-Ps-a77">
-                                                <rect key="frame" x="10" y="10" width="70" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <buttonCell key="cell" type="square" title="识别" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" sound="Ping" inset="2" id="y8h-kM-zgd">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="15" name="Baloo-Regular"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="analyseImage:" target="xCf-gd-p0V" id="Sxg-uo-TLy"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </customView>
-                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="8si-XR-8Ie"/>
-                                </constraints>
-                            </customView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="qdC-7E-ajV" customClass="WelcomeView" customModule="PLR_Vision" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="930" height="600"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uJF-yd-KQn">
-                                        <rect key="frame" x="234" y="40" width="462" height="48"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="欢迎使用PLR_Vision车牌识别软件" id="EY1-XP-Ixb">
-                                            <font key="font" size="30" name="Baloo-Regular"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gz-pp-Rvg">
-                                        <rect key="frame" x="165" y="100" width="600" height="400"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="LVe-wR-kFn"/>
-                                            <constraint firstAttribute="width" constant="600" id="WqM-Mn-0cg"/>
-                                        </constraints>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="mainlogo" id="WEn-1x-0lJ"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="2Gz-pp-Rvg" firstAttribute="centerX" secondItem="qdC-7E-ajV" secondAttribute="centerX" id="2qh-lV-Mfc"/>
-                                    <constraint firstItem="2Gz-pp-Rvg" firstAttribute="centerY" secondItem="qdC-7E-ajV" secondAttribute="centerY" id="gW4-TJ-cTL"/>
-                                    <constraint firstItem="uJF-yd-KQn" firstAttribute="centerX" secondItem="qdC-7E-ajV" secondAttribute="centerX" id="zR1-dG-atp"/>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="fYs-SE-Rkg" userLabel="ContentView">
@@ -1374,10 +1329,12 @@
                                     <constraint firstItem="grx-vf-Zp3" firstAttribute="leading" secondItem="bZz-pI-mOd" secondAttribute="trailing" constant="16" id="y4M-IH-K3O"/>
                                 </constraints>
                             </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="qdC-7E-ajV" customClass="WelcomeView" customModule="PLR_Vision" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="930" height="600"/>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lVN-pn-BG0" secondAttribute="trailing" id="B1v-iv-3Vv"/>
-                            <constraint firstItem="lVN-pn-BG0" firstAttribute="top" secondItem="uJF-yd-KQn" secondAttribute="bottom" constant="40" id="Ek9-ZY-YKR"/>
                             <constraint firstItem="lVN-pn-BG0" firstAttribute="top" secondItem="fYs-SE-Rkg" secondAttribute="bottom" id="G7I-cV-RhY"/>
                             <constraint firstAttribute="trailing" secondItem="qdC-7E-ajV" secondAttribute="trailing" id="JZv-IW-DLC"/>
                             <constraint firstItem="fYs-SE-Rkg" firstAttribute="top" secondItem="Ism-oy-YTU" secondAttribute="top" id="Nee-UL-tte"/>
@@ -1394,14 +1351,12 @@
                         <outlet property="bottomView" destination="lVN-pn-BG0" id="rPM-rC-wve"/>
                         <outlet property="changeView" destination="wUR-4K-A4c" id="dX3-Y8-8yS"/>
                         <outlet property="charsView" destination="IFV-zc-yku" id="78X-UQ-y9r"/>
-                        <outlet property="circleButton" destination="poi-Ps-a77" id="9GU-6O-Zbe"/>
                         <outlet property="contentView" destination="fYs-SE-Rkg" id="PS9-GZ-2Za"/>
                         <outlet property="imageAreaView" destination="LgV-vh-TQ0" id="3mW-kG-r4e"/>
                         <outlet property="imageView" destination="AGy-sY-Czu" id="eW7-st-Sjc"/>
                         <outlet property="plateDetailView" destination="4Wy-Kl-WME" id="ccL-DH-WAr"/>
                         <outlet property="platesView" destination="bZz-pI-mOd" id="Bqz-o5-eww"/>
                         <outlet property="recordsView" destination="Ndb-4E-vAn" id="3QJ-UO-HCY"/>
-                        <outlet property="shadowView" destination="00f-IJ-ki6" id="9qE-9u-tsG"/>
                         <outlet property="timeView" destination="grx-vf-Zp3" id="o51-08-6KW"/>
                         <outlet property="welcomeView" destination="qdC-7E-ajV" id="W2j-8z-UIB"/>
                     </connections>
@@ -1420,25 +1375,6 @@
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Vhi-5D-XMZ" customClass="BottomView" customModule="PLR_Vision" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="930" height="100"/>
-                                <subviews>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-hK-HZW">
-                                        <rect key="frame" x="420" y="10" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <subviews>
-                                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ty-7E-v8y">
-                                                <rect key="frame" x="10" y="10" width="70" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <buttonCell key="cell" type="square" title="识别" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="tIr-Px-lnm">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="15" name="Baloo-Regular"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="analyseVideo:" target="QaB-wG-K7A" id="x0E-TN-XY1"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </customView>
-                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Mdw-aP-J7O"/>
                                 </constraints>
@@ -1474,7 +1410,7 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <progressIndicator wantsLayer="YES" maxValue="100" doubleValue="50" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-6p-2Na">
+                                                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-6p-2Na">
                                                         <rect key="frame" x="63" y="3" width="455" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="455" id="Ey4-T1-Sfh"/>
@@ -1545,12 +1481,26 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView id="N0E-GG-tgE" customClass="RecordTableCell" customModule="PLR_Vision" customModuleProvider="target">
+                                                                        <tableCellView identifier="RecordTableCellID" id="N0E-GG-tgE" customClass="RecordTableCell" customModule="PLR_Vision" customModuleProvider="target">
                                                                             <rect key="frame" x="1" y="1" width="277" height="50"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
+                                                                                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kom-Md-XlL">
+                                                                                    <rect key="frame" x="226" y="13" width="25" height="25"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="cvA-y9-ypa"/>
+                                                                                </imageView>
+                                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4h9-z8-jWi">
+                                                                                    <rect key="frame" x="17" y="16" width="35" height="20"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="蓝牌" id="LhJ-rF-Hvo">
+                                                                                        <font key="font" size="13" name="Baloo-Regular"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sv5-C1-E6d">
-                                                                                    <rect key="frame" x="56" y="12" width="164" height="28"/>
+                                                                                    <rect key="frame" x="71" y="12" width="150" height="28"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="吉 AA765F" id="VMv-ib-Lu6">
                                                                                         <font key="font" size="18" name="STSongti-SC-Black"/>
@@ -1558,13 +1508,9 @@
                                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                     </textFieldCell>
                                                                                 </textField>
-                                                                                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kom-Md-XlL">
-                                                                                    <rect key="frame" x="226" y="13" width="25" height="25"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="cvA-y9-ypa"/>
-                                                                                </imageView>
                                                                             </subviews>
                                                                             <connections>
+                                                                                <outlet property="colorLabel" destination="4h9-z8-jWi" id="N1J-cJ-0Vy"/>
                                                                                 <outlet property="licenseLabel" destination="Sv5-C1-E6d" id="v0r-3j-G6P"/>
                                                                                 <outlet property="textField" destination="Sv5-C1-E6d" id="HTF-Rd-GTS"/>
                                                                             </connections>
@@ -1747,11 +1693,13 @@
                                             <constraint firstAttribute="width" constant="280" id="Fsb-kZ-sgW"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="blueNumLabel" destination="qzF-dz-ozr" id="od9-QK-QEj"/>
                                             <outlet property="fpsLabel" destination="Nld-mg-L7R" id="hGL-lz-V8f"/>
                                             <outlet property="frameArea" destination="W0k-u7-iZm" id="4c0-2z-06d"/>
                                             <outlet property="platesArea" destination="m3g-lI-A3j" id="VbI-3R-eqO"/>
                                             <outlet property="resolutionStr" destination="Dqo-zC-Upm" id="tOn-N0-vx1"/>
                                             <outlet property="sizeArea" destination="A44-zT-hIp" id="19e-4z-igl"/>
+                                            <outlet property="yellowNumLabel" destination="d3P-3X-upB" id="OAx-P1-a2Y"/>
                                         </connections>
                                     </customView>
                                 </subviews>
@@ -1767,6 +1715,10 @@
                                     <constraint firstAttribute="bottom" secondItem="1FJ-Qn-g6g" secondAttribute="bottom" constant="8" id="wwR-90-7kO"/>
                                 </constraints>
                             </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVk-1X-4an" userLabel="Welcome View" customClass="WelcomeView" customModule="PLR_Vision" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="930" height="600"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="x5I-RX-tfn" secondAttribute="trailing" id="AVY-CK-I9e"/>
@@ -1779,14 +1731,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="circleButton" destination="6Ty-7E-v8y" id="wNU-45-rEb"/>
+                        <outlet property="bottomView" destination="Vhi-5D-XMZ" id="LRi-Js-NnP"/>
                         <outlet property="contentView" destination="x5I-RX-tfn" id="bjo-lf-I86"/>
                         <outlet property="fpsLabel" destination="Nld-mg-L7R" id="cY2-rK-qEw"/>
                         <outlet property="recordArea" destination="1FJ-Qn-g6g" id="Vn9-Gj-Sls"/>
-                        <outlet property="shadowView" destination="QUH-hK-HZW" id="ImL-zE-5wc"/>
                         <outlet property="showArea" destination="BdY-sm-NsB" id="3Fi-3I-TOA"/>
                         <outlet property="stateArea" destination="NV4-O4-YDR" id="3wj-7s-ykW"/>
                         <outlet property="videoArea" destination="oCh-e7-Amr" id="isS-Dn-sil"/>
+                        <outlet property="welcomeView" destination="gVk-1X-4an" id="zrp-R1-Eb4"/>
                     </connections>
                 </viewController>
                 <customObject id="Di2-WE-hla" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -28641,6 +28593,5 @@ AGcAAAAAAAAAAAAAAAAAGICOA
         <image name="video" width="128" height="128"/>
         <image name="videoPlay" width="1102" height="866"/>
         <image name="video_selected" width="128" height="128"/>
-        <sound name="Ping"/>
     </resources>
 </document>

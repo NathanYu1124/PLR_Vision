@@ -39,7 +39,7 @@ public:
     // 识别图片上的车牌号
     vector<string> recognizePlateNumber(Mat src, vector<vector<map<string, float>>> &charsScore, vector<string> &colors);
     
-    vector<NYPlate> recognizePlateNumber(Mat src);
+    vector<NYPlate> recognizePlateNumber(Mat &src);
     
     vector<NYPlate> recognizeVideoPlate(Mat &src);
     
@@ -47,7 +47,7 @@ public:
     void setModelPath(string cachePath, string svmPath, string charPath, string zhPath);
     
     // 分析视频流: 牺牲精度，提高处理速度
-    void analyseVideo(string videoPath);
+    void analyseVideo(string videoPath, bool &flag);
     
     // 停止视频处理
     void stopAnalysing();

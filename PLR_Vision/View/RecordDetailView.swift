@@ -28,6 +28,10 @@ class RecordDetailView: NSView {
     @IBOutlet weak var charsView: CharsView!
     @IBOutlet weak var infoView: NSView!
     @IBOutlet weak var backView: NSView!
+    @IBOutlet weak var plateImageView: NSImageView!
+    @IBOutlet weak var licenseLabel: NSTextField!
+    @IBOutlet weak var colorLabel: NSTextField!
+    
     
     var plateModel: PlateInfoModel!
     
@@ -94,7 +98,6 @@ class RecordDetailView: NSView {
         infoView.layer?.cornerRadius = 20
         infoView.layer?.backgroundColor = L_Yellow
         
-        // 37,150,172
         charsView.backgroundColor = CGColor(red: 37 / 255, green: 150 / 255, blue: 172 / 255, alpha: 0.9)
 
         rectInitial = NSRect(x: 0, y: 0, width: 1, height: 1)
@@ -102,17 +105,32 @@ class RecordDetailView: NSView {
         self.layer?.mask = maskLayer
     }
     
+    func updateUI(model: PlateInfoModel) {
+        
+        plateImageView.image = model.plateImage
+        licenseLabel.stringValue = model.plateLicense
+        colorLabel.stringValue = model.plateColor
+        
+        charsView.updateUI(charsArray: model.charsArray)
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
     
     @IBAction func playLicenseSound(_ sender: Any) {
-          
+        
+        if !AudioTool.isPlaying() {
+            AudioTool.playPlateSound(license: licenseLabel.stringValue as NSString)
+        }
     }
     
     // MARK: - Circle Animation
     // view显示动画
-    func showCircleAnimation() {
+    func showCircleAnimation(model: PlateInfoModel) {
+        
+        // 填充数据
+        updateUI(model: model)
         
         // 移除之前的动画
         maskLayer.removeAnimation(forKey: "path")

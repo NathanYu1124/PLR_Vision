@@ -17,12 +17,16 @@
 extern int idx = 0;
 
 // 划分车牌上的字符
-vector<NYCharacter> NYCharacterPartition::divideCharacters(NYPlate &plate)
+bool NYCharacterPartition::divideCharacters(NYPlate &plate, vector<NYCharacter> &charsVec)
 {
-    vector<NYCharacter> charsVec;
-    
     // 灰度化 颜色判断 二值化 取轮廓 找外接矩形 截取图块
     Mat src = plate.getPlateMat();
+    
+    // 无法读取车牌图像
+    if (src.empty()) {
+        cout << "NYCharacterPartition: 无法读取车牌Mat!" << endl;
+        return false;
+    }
     
     // 灰度化
     Mat src_gray;
@@ -96,8 +100,7 @@ vector<NYCharacter> NYCharacterPartition::divideCharacters(NYPlate &plate)
         charsVec.push_back(plate_char);
     }
 
-    // 二值字符Mat vec
-    return charsVec;
+    return true;
 }
 
 // 寻找字符分割点
@@ -383,7 +386,7 @@ void NYCharacterPartition::clearLeftAndRightBorder(cv::Mat &src, vector<int> &bo
     // 若无小圆点，则依据字符间隔确认
     int idx = -1;
     if (charsRects.size() < 7) {    // 粘连部分过多，依据经验划分
-        cout << "rects size are not enough!" << endl;
+//        cout << "rects size are not enough!" << endl;
         
         return;
     }

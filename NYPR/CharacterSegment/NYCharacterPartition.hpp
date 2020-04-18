@@ -19,7 +19,7 @@ class NYCharacterPartition {
 public:
     
     // 划分车牌上的字符
-    vector<NYCharacter> divideCharacters(NYPlate &plate);
+    bool divideCharacters(NYPlate &plate, vector<NYCharacter> &charsVec);
     
 private:
     

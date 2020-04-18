@@ -16,8 +16,6 @@ class ImageViewController: NSViewController {
     @IBOutlet weak var platesView: PlatesView!
     @IBOutlet weak var plateDetailView: PlateDetailView!
     @IBOutlet weak var bottomView: BottomView!
-    @IBOutlet weak var circleButton: NSButton!
-    @IBOutlet weak var shadowView: NSView!
     @IBOutlet weak var changeView: NSView!
     @IBOutlet weak var charsView: CharsView!
     @IBOutlet weak var welcomeView: WelcomeView!
@@ -34,11 +32,14 @@ class ImageViewController: NSViewController {
     // MARK: - View lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        // 初始-欢迎界面
-        contentView.isHidden = true
-        bottomView.wantsLayer = true
-        bottomView.layer?.backgroundColor = L_Orange
+            
+        // 初始显示欢迎页面
+//        contentView.isHidden = true
+        
+        welcomeView.setContentType(type: .image)
+        
+        bottomView.delegate = self
+        bottomView.setViewType(type: .image)
     }
     
     override func viewWillAppear() {
@@ -60,19 +61,9 @@ class ImageViewController: NSViewController {
         changeView.layer?.cornerRadius = 20
         changeView.layer?.backgroundColor = CGColor(red: 249 / 255, green: 60 / 255, blue: 26 / 255, alpha: 0.6)
         
-        
         platesView.wantsLayer = true
         platesView.layer?.cornerRadius = 20
         platesView.layer?.backgroundColor = CGColor(red: 56 / 255, green: 65 / 255, blue: 231 / 255, alpha: 0.7)
-        
-        
-        circleButton.wantsLayer = true
-        circleButton.layer?.cornerRadius = 35
-        circleButton.layer?.backgroundColor = L_Yellow
-        
-        shadowView.wantsLayer = true
-        shadowView.layer?.cornerRadius = 45
-        shadowView.layer?.backgroundColor = CGColor(red: 250 / 255, green: 178 / 255, blue: 95 / 255, alpha: 0.7)
         
         timeView.wantsLayer = true
         timeView.layer?.cornerRadius = 20
@@ -83,12 +74,14 @@ class ImageViewController: NSViewController {
         recordsView.layer?.backgroundColor = CGColor(red: 51 / 255, green: 156 / 255, blue: 201 / 255, alpha: 0.7)
     }
     
-    
-    @IBAction func analyseImage(_ sender: NSButton) {
+    // 识别选中的图片
+    func analyseImage(sender: NSButton) {
         
+        // 禁止交互
         sender.isEnabled = false
+        
         plateIndex = 0
-                   
+        
         // 文件选择
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
@@ -99,7 +92,6 @@ class ImageViewController: NSViewController {
         panel.begin { (result) in
             if result == .OK {
                 if let url = panel.url {
-//                    let image = NSImage(contentsOf: url)
                     
                     // 获取选中图片的绝对路径
                     var path = url.absoluteString
@@ -107,7 +99,7 @@ class ImageViewController: NSViewController {
                     path.removeSubrange(range)
                     
                     let startTime = Date()
-                        
+                    
                     // 后台执行
                     DispatchQueue.global().async {
                         if let dict = ImageConverter.getPlateLicense(path, svmPath: SVM_MODEL_PATH, charPath: CNN_CHAR_MODEL_PATH, zhPath: CNN_ZH_MODEL_PATH, outPath: CACHE_PATH)
@@ -121,38 +113,58 @@ class ImageViewController: NSViewController {
                                 self.records += 1
                                 // 识别信息 字典转模型
                                 self.dictModels = PlateInfoModel.getModels(dict: dict)
-                                  
                                 let endTime = Date()
-                                 
+                                
                                 // 主线程更新UI
                                 DispatchQueue.main.async {
-                                      
-                                // 切换详情界面
-                                if !self.welcomeView.isHidden {
-                                          
-                                    self.welcomeView.isHidden = true
-                                    self.contentView.isHidden = false
-                                    self.bottomView.layer?.backgroundColor = CGColor.clear
-                                }
                                     
-                                // 更换绘制过的图片
-                                let imgPath = CACHE_PATH + "/drawcar.jpg";
-                                if let image = NSImage(byReferencingFile: imgPath) {
-                                    self.imageView.image = image
-                                    self.updateUI(plateModel: self.dictModels[self.plateIndex])
-                                    self.timeView.updateUI(sTime: startTime, eTime: endTime)
-                                    self.recordsView.updateUI(records: self.records)
-                                } else {
-                                    print("can't load drawed image!")
+                                    // 更换绘制过的图片
+                                    let imgPath = CACHE_PATH + "/drawcar.jpg";
+                                    if let image = NSImage(byReferencingFile: imgPath) {
+                                        self.imageView.image = image
+                                        self.updateUI(plateModel: self.dictModels[self.plateIndex])
+                                        self.timeView.updateUI(sTime: startTime, eTime: endTime)
+                                        self.recordsView.updateUI(records: self.records)
+                                    } else {
+                                        print("can't load drawed image!")
+                                    }
+                                    
+                                    // 切换详情界面
+                                    if !self.welcomeView.isHidden {
+                                        // 动画
+                                        self.showContentViewAnimation()
+                                    }
                                 }
                             }
                         }
                     }
                 }
-                }
             }
-                       
+            
             sender.isEnabled = true
+        }
+    }
+    
+    // 动画
+    func showContentViewAnimation() {
+                
+        NSAnimationContext.runAnimationGroup({ (context) in
+            let maskLayer = CAShapeLayer()
+            let circlePathInitial = NSBezierPath(ovalIn: NSRect(x: 0, y: 0, width: 930, height: 930))
+            let circlePathFinal = NSBezierPath(ovalIn: NSRect(x: 465, y: 300, width: 1, height: 1))
+            maskLayer.path = circlePathFinal.cgPath
+            welcomeView.layer?.mask = maskLayer
+            
+            let anim = CABasicAnimation(keyPath: "path")
+            anim.duration = 0.2
+            anim.fromValue = circlePathInitial.cgPath
+            anim.toValue = circlePathFinal.cgPath
+            maskLayer.add(anim, forKey: "path")
+            
+            bottomView.animator().layer?.backgroundColor = CGColor.clear
+            
+        }) {
+            self.welcomeView.isHidden = true
         }
     }
     
@@ -173,7 +185,8 @@ class ImageViewController: NSViewController {
        }
     }
     
-   private func updateUI(plateModel: PlateInfoModel) {
+    // 更新UI
+    private func updateUI(plateModel: PlateInfoModel) {
         charsView.updateUI(charsArray: plateModel.charsArray)
         platesView.updateUI(plateModels: dictModels)
         plateDetailView.updateUI(plateModel: plateModel)
@@ -195,3 +208,12 @@ class ImageViewController: NSViewController {
     }
 }
 
+// MARK: - BottomViewProtocol
+extension ImageViewController: BottomViewProtocol {
+    
+    func buttonPressed(_ bottomView: BottomView, sender: NSButton) {
+        analyseImage(sender: sender)
+    }
+    
+    
+}

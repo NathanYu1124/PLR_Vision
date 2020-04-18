@@ -137,10 +137,13 @@ NYAutoRecognize recognizer;
     // 初始化模型地址
     recognizer.setModelPath(cachePath.UTF8String, svmModelPath.UTF8String, charModelPath.UTF8String, zhModelPath.UTF8String);
     
-    // 处理视频
-    recognizer.analyseVideo(videoPath.UTF8String);
+    // 是否能正常打开视频
+    bool flag = true;
     
-    return true;
+    // 处理视频: 无法打开视频则返回false
+    recognizer.analyseVideo(videoPath.UTF8String, flag);
+    
+    return flag;
 }
 
 // OpenCV获取视频帧
