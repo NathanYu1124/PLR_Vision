@@ -8,7 +8,7 @@ PLR Vision是macOS系统下的开源中文车牌识别系统，核心算法NYPR�
 
 ![mainView](https://github.com/NathanYu1124/PLR_Vision/blob/master/Imgs/mainView.png)
 
-#### 测试视频
+#### 测试视频:    [YouTube](https://youtu.be/BJf0EQBnt1c)     [Bilibili](https://www.bilibili.com/video/BV1DZ4y1x7nc/)
 
 ![](https://github.com/NathanYu1124/PLR_Vision/blob/master/Imgs/gif_Demo.gif)
 
@@ -32,7 +32,7 @@ PLR Vision是macOS系统下的开源中文车牌识别系统，核心算法NYPR�
 
 ## 注意事项
 
-* 项目当前分支为待完善的开发测试版本，为获得更好的使用体验请安装稳定的 [Release](https://github.com/NathanYu1124/PLR_Vision/releases) 版本
+* 项目当前分支为待完善的开发测试版本，为获得更好的使用体验请安装最新的 [Release](https://github.com/NathanYu1124/PLR_Vision/releases) 版本(v2.0.2)
 
 
 
