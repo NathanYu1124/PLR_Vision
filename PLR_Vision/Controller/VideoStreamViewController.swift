@@ -28,6 +28,8 @@ class VideoStreamViewController: NSViewController {
     var plateModels = [PlateInfoModel]()
     var isAnalysingVideo = false        // 是否正在处理视频
     
+    // 完成提示
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,7 +177,7 @@ class VideoStreamViewController: NSViewController {
         // alert提醒
         let alert = NSAlert()
         alert.alertStyle = .warning
-        alert.icon = NSImage(named: NSImage.Name(rawValue: "AppIcon"))
+        alert.icon = NSImage(named: "AppIcon")
         alert.addButton(withTitle: "退出")
         alert.addButton(withTitle: "继续检测")
         alert.messageText = "你想在完成检测前退出吗?"
@@ -200,7 +202,7 @@ class VideoStreamViewController: NSViewController {
         // alert提醒
         let alert = NSAlert()
         alert.alertStyle = .warning
-        alert.icon = NSImage(named: NSImage.Name(rawValue: "AppIcon"))
+        alert.icon = NSImage(named: "AppIcon")
         alert.addButton(withTitle: "退出")
         alert.messageText = "未能成功加载视频!"
         alert.informativeText = "请检查视频路径中是否有空格或汉字, 若有则无法正常加载视频!"

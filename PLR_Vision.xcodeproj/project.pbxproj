@@ -115,22 +115,9 @@
 		7EB0980820DAA46200A911D0 /* PlateInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097E920DAA46200A911D0 /* PlateInfoModel.swift */; };
 		7EB0980920DAA46200A911D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB097EB20DAA46200A911D0 /* Main.storyboard */; };
 		7EB0980A20DAA46200A911D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097ED20DAA46200A911D0 /* AppDelegate.swift */; };
-		7EB0980B20DAA46200A911D0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EB097EF20DAA46200A911D0 /* Info.plist */; };
-		7EB0980C20DAA46200A911D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097F120DAA46200A911D0 /* MainViewController.swift */; };
-		7EB0980D20DAA46200A911D0 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097F220DAA46200A911D0 /* WindowController.swift */; };
 		7EB0980F20DAA46200A911D0 /* LoadingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097F420DAA46200A911D0 /* LoadingWindowController.swift */; };
-		7EB0981020DAA46200A911D0 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097F520DAA46200A911D0 /* VideoViewController.swift */; };
 		7EB0981120DAA46200A911D0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097F620DAA46200A911D0 /* AboutViewController.swift */; };
 		7EB0981220DAA46200A911D0 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097F720DAA46200A911D0 /* LoadingViewController.swift */; };
-		7EB0981320DAA46200A911D0 /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097F920DAA46200A911D0 /* CustomCellView.swift */; };
-		7EB0981420DAA46200A911D0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097FA20DAA46200A911D0 /* DetailView.swift */; };
-		7EB0981520DAA46200A911D0 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB097FB20DAA46200A911D0 /* CustomCell.xib */; };
-		7EB0981620DAA46200A911D0 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB097FC20DAA46200A911D0 /* DetailView.xib */; };
-		7EB0981720DAA46200A911D0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097FD20DAA46200A911D0 /* CustomButton.swift */; };
-		7EB0981820DAA46200A911D0 /* PlateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB097FE20DAA46200A911D0 /* PlateCell.xib */; };
-		7EB0981920DAA46200A911D0 /* PlateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB097FF20DAA46200A911D0 /* PlateCell.swift */; };
-		7EB0981A20DAA46200A911D0 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0980020DAA46200A911D0 /* CircularButton.swift */; };
-		7EB0981B20DAA46200A911D0 /* CustomRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0980120DAA46200A911D0 /* CustomRowView.swift */; };
 		7EB0981C20DAA46200A911D0 /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0980320DAA46200A911D0 /* NSImage+OpenCV.mm */; };
 		7EB0981D20DAA46200A911D0 /* AudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0980520DAA46200A911D0 /* AudioTool.swift */; };
 		7EB0981F20DAA49700A911D0 /* OpenCVMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0981E20DAA49700A911D0 /* OpenCVMethods.mm */; };
@@ -819,21 +806,9 @@
 		7EB097ED20DAA46200A911D0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB097EE20DAA46200A911D0 /* PLR_Vision-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PLR_Vision-Bridging-Header.h"; sourceTree = "<group>"; };
 		7EB097EF20DAA46200A911D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EB097F120DAA46200A911D0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7EB097F220DAA46200A911D0 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		7EB097F420DAA46200A911D0 /* LoadingWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingWindowController.swift; sourceTree = "<group>"; };
-		7EB097F520DAA46200A911D0 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		7EB097F620DAA46200A911D0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7EB097F720DAA46200A911D0 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		7EB097F920DAA46200A911D0 /* CustomCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
-		7EB097FA20DAA46200A911D0 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		7EB097FB20DAA46200A911D0 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
-		7EB097FC20DAA46200A911D0 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
-		7EB097FD20DAA46200A911D0 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		7EB097FE20DAA46200A911D0 /* PlateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlateCell.xib; sourceTree = "<group>"; };
-		7EB097FF20DAA46200A911D0 /* PlateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateCell.swift; sourceTree = "<group>"; };
-		7EB0980020DAA46200A911D0 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
-		7EB0980120DAA46200A911D0 /* CustomRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRowView.swift; sourceTree = "<group>"; };
 		7EB0980320DAA46200A911D0 /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
 		7EB0980420DAA46200A911D0 /* NSImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+OpenCV.h"; sourceTree = "<group>"; };
 		7EB0980520DAA46200A911D0 /* AudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTool.swift; sourceTree = "<group>"; };
@@ -2149,9 +2124,6 @@
 				7E58FBCF2407F42A001E5C02 /* HomeWindowController.swift */,
 				7E58FBD12407F443001E5C02 /* HomeViewController.swift */,
 				7EB097F620DAA46200A911D0 /* AboutViewController.swift */,
-				7EB097F120DAA46200A911D0 /* MainViewController.swift */,
-				7EB097F220DAA46200A911D0 /* WindowController.swift */,
-				7EB097F520DAA46200A911D0 /* VideoViewController.swift */,
 				7E066073240A2E2800911762 /* ImageViewController.swift */,
 				7E0EC49B240C913300599310 /* SettingViewController.swift */,
 				7E0EC49D240CB1F000599310 /* VideoStreamViewController.swift */,
@@ -2169,15 +2141,6 @@
 				7E0EC4A3240CF44100599310 /* CharsView.swift */,
 				7EA3140524458BBD000574AF /* CharsView.xib */,
 				7E0EC4A5240E001500599310 /* CharCell.swift */,
-				7EB097F920DAA46200A911D0 /* CustomCellView.swift */,
-				7EB097FA20DAA46200A911D0 /* DetailView.swift */,
-				7EB097FC20DAA46200A911D0 /* DetailView.xib */,
-				7EB097FB20DAA46200A911D0 /* CustomCell.xib */,
-				7EB097FD20DAA46200A911D0 /* CustomButton.swift */,
-				7EB097FE20DAA46200A911D0 /* PlateCell.xib */,
-				7EB097FF20DAA46200A911D0 /* PlateCell.swift */,
-				7EB0980020DAA46200A911D0 /* CircularButton.swift */,
-				7EB0980120DAA46200A911D0 /* CustomRowView.swift */,
 				7E4DDC84241E112300051E34 /* PlatesView.swift */,
 				7E4DDC86241E6B1100051E34 /* PlateDetailView.swift */,
 				7EA3140124455928000574AF /* PlateDetailView.xib */,
@@ -2316,12 +2279,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = NathanYu;
 				TargetAttributes = {
 					7E71AE342089B1C000AA0CB2 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1140;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -2356,7 +2319,6 @@
 			files = (
 				7E210CD5209D840700437453 /* 宁.mp3 in Resources */,
 				7E210CC3209D840700437453 /* E.mp3 in Resources */,
-				7EB0981820DAA46200A911D0 /* PlateCell.xib in Resources */,
 				7E210CEC209D840700437453 /* 闽.mp3 in Resources */,
 				7E210CDE209D840700437453 /* 赣.mp3 in Resources */,
 				7E210CD4209D840700437453 /* P.mp3 in Resources */,
@@ -2377,7 +2339,6 @@
 				7E210CB3209D840700437453 /* 渝.mp3 in Resources */,
 				7E210CE4209D840700437453 /* V.mp3 in Resources */,
 				7EEE5797244AEF2E00257822 /* WelcomeView.xib in Resources */,
-				7EB0980B20DAA46200A911D0 /* Info.plist in Resources */,
 				7E210CEE209D840700437453 /* 贵.mp3 in Resources */,
 				7E210CCF209D840700437453 /* 粤.mp3 in Resources */,
 				7E4DDC82241734E200051E34 /* CNN_ZH63_MODEL.md in Resources */,
@@ -2404,7 +2365,6 @@
 				7EB0980920DAA46200A911D0 /* Main.storyboard in Resources */,
 				7E210CBD209D840700437453 /* N.mp3 in Resources */,
 				7EA3140424456344000574AF /* BottomView.xib in Resources */,
-				7EB0981520DAA46200A911D0 /* CustomCell.xib in Resources */,
 				7E210CC4209D840700437453 /* Y.mp3 in Resources */,
 				7E210CD7209D840700437453 /* D.mp3 in Resources */,
 				7E210CB6209D840700437453 /* 甘.mp3 in Resources */,
@@ -2436,7 +2396,6 @@
 				7E210CB2209D840700437453 /* 浙.mp3 in Resources */,
 				7E210CBA209D840700437453 /* 云.mp3 in Resources */,
 				7E210CEA209D840700437453 /* 湘.mp3 in Resources */,
-				7EB0981620DAA46200A911D0 /* DetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2452,7 +2411,6 @@
 				7EB0984420DAA4CE00A911D0 /* NYCharacterJudge.cpp in Sources */,
 				7EA313FC24441BF0000574AF /* FrameModel.swift in Sources */,
 				7E4DDC87241E6B1100051E34 /* PlateDetailView.swift in Sources */,
-				7EB0981A20DAA46200A911D0 /* CircularButton.swift in Sources */,
 				7E0EC4A6240E001500599310 /* CharCell.swift in Sources */,
 				7EB0984120DAA4CE00A911D0 /* NYCharacterPartition.cpp in Sources */,
 				7EA3140024455778000574AF /* ShowWinView.swift in Sources */,
@@ -2460,19 +2418,14 @@
 				7EB0980A20DAA46200A911D0 /* AppDelegate.swift in Sources */,
 				7EB0984520DAA4CE00A911D0 /* NYPlateDetect.cpp in Sources */,
 				7EFB5F9F2442BAA700EFCAA0 /* VideoWinView.swift in Sources */,
-				7EB0981320DAA46200A911D0 /* CustomCellView.swift in Sources */,
 				7EEE57932449795300257822 /* RecordDetailView.swift in Sources */,
 				7E58FBD42407F497001E5C02 /* Constant.swift in Sources */,
 				7E4DDC8D241FB30500051E34 /* RecordsView.swift in Sources */,
 				7EB0984020DAA4CE00A911D0 /* Utils.cpp in Sources */,
 				7E066074240A2E2800911762 /* ImageViewController.swift in Sources */,
-				7EB0980D20DAA46200A911D0 /* WindowController.swift in Sources */,
 				7E4DDC8B241FA99400051E34 /* TimeView.swift in Sources */,
 				7EC6382A240BADC8002C4527 /* BottomView.swift in Sources */,
-				7EB0981020DAA46200A911D0 /* VideoViewController.swift in Sources */,
-				7EB0981B20DAA46200A911D0 /* CustomRowView.swift in Sources */,
 				7EEE578F24488CB100257822 /* RecordTableRowView.swift in Sources */,
-				7EB0981720DAA46200A911D0 /* CustomButton.swift in Sources */,
 				7EB0984820DAA4CE00A911D0 /* NYCharacter.cpp in Sources */,
 				7E0660722409727300911762 /* MSView.swift in Sources */,
 				7EB0981D20DAA46200A911D0 /* AudioTool.swift in Sources */,
@@ -2486,16 +2439,13 @@
 				7EB0984620DAA4CE00A911D0 /* NYPlateJudge.cpp in Sources */,
 				7EB0981F20DAA49700A911D0 /* OpenCVMethods.mm in Sources */,
 				7EB0980F20DAA46200A911D0 /* LoadingWindowController.swift in Sources */,
-				7EB0981420DAA46200A911D0 /* DetailView.swift in Sources */,
 				7EB0980820DAA46200A911D0 /* PlateInfoModel.swift in Sources */,
-				7EB0980C20DAA46200A911D0 /* MainViewController.swift in Sources */,
 				7EABF5822408E32D00B364EC /* MenuButton.swift in Sources */,
 				7EB0981220DAA46200A911D0 /* LoadingViewController.swift in Sources */,
 				7E7E63402441ED070092DF21 /* StateWinView.swift in Sources */,
 				7EB0984920DAA4CE00A911D0 /* NYPlate.cpp in Sources */,
 				7E0EC49E240CB1F000599310 /* VideoStreamViewController.swift in Sources */,
 				7E58FBD22407F443001E5C02 /* HomeViewController.swift in Sources */,
-				7EB0981920DAA46200A911D0 /* PlateCell.swift in Sources */,
 				7EB0981120DAA46200A911D0 /* AboutViewController.swift in Sources */,
 				7E0EC4A4240CF44100599310 /* CharsView.swift in Sources */,
 				7E0EC49C240C913300599310 /* SettingViewController.swift in Sources */,
@@ -2511,6 +2461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2574,6 +2525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2629,7 +2581,6 @@
 		7E71AE462089B1C100AA0CB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
@@ -2638,6 +2589,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -2657,7 +2609,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -2665,7 +2617,6 @@
 		7E71AE472089B1C100AA0CB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PLR_Vision/PLR_Vision.entitlements;
@@ -2674,6 +2625,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = NV97G7H6BN;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -2692,7 +2644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.inkinc.PLR-Vision";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PLR_Vision/Others/PLR_Vision-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

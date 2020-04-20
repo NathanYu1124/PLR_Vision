@@ -26,7 +26,7 @@ class PlateDetailView: NSView {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
-        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "PlateDetailView"), bundle: Bundle(for: type(of: self)))
+        let nib = NSNib(nibNamed: "PlateDetailView", bundle: Bundle(for: type(of: self)))
         nib?.instantiate(withOwner: self, topLevelObjects: nil)
         
         contentView.wantsLayer = true
@@ -49,7 +49,7 @@ class PlateDetailView: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "PlateDetailView"), bundle: Bundle(for: type(of: self)))
+        let nib = NSNib(nibNamed: "PlateDetailView", bundle: Bundle(for: type(of: self)))
         nib?.instantiate(withOwner: self, topLevelObjects: nil)
         
         contentView.wantsLayer = true

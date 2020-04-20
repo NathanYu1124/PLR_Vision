@@ -31,6 +31,7 @@ NYAutoRecognize recognizer;
     Mat img = imread(imgPath.UTF8String);
     // 路径中空格或汉字: 无法读取图片
     if (img.empty()) {
+    
         NSLog(@"---------------------------\n");
         NSLog(@"路径中有空格或汉字: 无法读取图片!\n");
         NSMutableDictionary *emptyDict = [[NSMutableDictionary alloc] init];

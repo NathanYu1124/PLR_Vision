@@ -16,5 +16,4 @@ class SettingViewController: NSViewController {
         view.wantsLayer = true
         view.layer?.backgroundColor = CGColor(red: 249 / 255, green: 60 / 255, blue: 26 / 255, alpha: 0.8)
     }
-    
 }

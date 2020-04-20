@@ -24,7 +24,7 @@ class CharsView: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "CharsView"), bundle: Bundle(for: type(of: self)))
+        let nib = NSNib(nibNamed: "CharsView", bundle: Bundle(for: type(of: self)))
         nib?.instantiate(withOwner: self, topLevelObjects: nil)
         addSubview(contentView)
         

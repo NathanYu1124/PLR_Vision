@@ -24,12 +24,13 @@ class HomeWindowController: NSWindowController {
         window?.isOpaque = false
         window?.backgroundColor = NSColor.clear
 
-        
         // 窗口圆角
         window?.contentView?.wantsLayer = true
         window?.contentView?.layer?.backgroundColor = CGColor.clear
         window?.contentView?.layer?.cornerRadius = 20.0
         window?.contentView?.layer?.masksToBounds = true
+        
+        window?.animationBehavior = .alertPanel
     }
     
     

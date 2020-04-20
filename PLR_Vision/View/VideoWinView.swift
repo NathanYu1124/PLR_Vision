@@ -15,6 +15,7 @@ class VideoWinView: NSView {
     @IBOutlet weak var endLabel: NSTextField!
     @IBOutlet weak var videoView: NSImageView!
     @IBOutlet weak var progressBar: NSProgressIndicator!
+    @IBOutlet weak var infoView: NSView!
     
 
     override func draw(_ dirtyRect: NSRect) {
@@ -41,5 +42,10 @@ class VideoWinView: NSView {
         endLabel.stringValue = frame.duration
         progressBar.doubleValue = frame.progress * 100
     }
+    
+    func showFinishView() {
+        
+    }
+    
     
 }

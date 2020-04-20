@@ -8,11 +8,8 @@
 
 #include "NYPlateJudge.hpp"
 
-// SVM模型路径
-//#define TRAIN_DATA_PATH "/Users/NathanYu/Desktop/svm/"
-
-extern int count_i = 3;
-extern int count_j = 18;
+//extern int count_i = 3;
+//extern int count_j = 18;
 
 // 提取HOG特征
 void NYPlateJudge::getHOGFeatures(Mat src, Mat &feature)

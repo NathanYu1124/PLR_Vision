@@ -14,7 +14,7 @@
 
 #define ANN_OUTPUT_PATH "/Users/NathanYu/Desktop/ANN/"
 
-extern int idx = 0;
+//extern int idx = 0;
 
 // 划分车牌上的字符
 bool NYCharacterPartition::divideCharacters(NYPlate &plate, vector<NYCharacter> &charsVec)

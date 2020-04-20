@@ -30,17 +30,17 @@ class HomeViewController: NSViewController {
         
         
         // 添加子视图控制器
-        aboutVC = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ABOUT_VC")) as? AboutViewController
-        addChildViewController(aboutVC)
+        aboutVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ABOUT_VC") as? AboutViewController
+        addChild(aboutVC)
         
-        settingVC = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "SETTING_VC")) as? SettingViewController
-        addChildViewController(settingVC)
+        settingVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "SETTING_VC") as? SettingViewController
+        addChild(settingVC)
         
-        imageVC = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "IMAGE_VC")) as? ImageViewController
-        addChildViewController(imageVC)
+        imageVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "IMAGE_VC") as? ImageViewController
+        addChild(imageVC)
         
-        videoVC = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "VIDEO_VC")) as? VideoStreamViewController
-        addChildViewController(videoVC)
+        videoVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "VIDEO_VC") as? VideoStreamViewController
+        addChild(videoVC)
         
         // 初始加载
         selectedButton = imageButton
@@ -135,7 +135,7 @@ class HomeViewController: NSViewController {
         // alert提醒
         let alert = NSAlert()
         alert.alertStyle = .warning
-        alert.icon = NSImage(named: NSImage.Name(rawValue: "AppIcon"))
+        alert.icon = NSImage(named: "AppIcon")
         alert.addButton(withTitle: "退出")
         alert.addButton(withTitle: "继续检测")
         alert.messageText = "你想在完成检测前退出吗?"
@@ -163,7 +163,7 @@ class HomeViewController: NSViewController {
             } else if modalResponse == NSApplication.ModalResponse.alertSecondButtonReturn {    // 继续检测
                 
                 if pressedButton != self.aboutButton {
-                    self.selectedButton = pressedButton as! MenuButton
+                    self.selectedButton = pressedButton as? MenuButton
                     self.changeMenuButtonState(button: self.videoButton)
                 }
             }

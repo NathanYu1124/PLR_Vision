@@ -104,7 +104,7 @@ class ShowWinView: NSView {
                
                NSAnimationContext.runAnimationGroup({ (context) in
                    context.duration = 0.5
-                   context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                   context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             
                    leftView.animator().setFrameOrigin(NSPoint(x: -500, y: 40))
                    leftView.animator().setFrameSize(NSSize(width: MaxWidth * mScaleRate, height: MaxHeight * mScaleRate))

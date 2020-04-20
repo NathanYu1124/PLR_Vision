@@ -173,7 +173,7 @@ class ImageViewController: NSViewController {
         // alert提醒
         let alert = NSAlert()
         alert.alertStyle = .warning
-        alert.icon = NSImage(named: NSImage.Name(rawValue: "AppIcon"))
+        alert.icon = NSImage(named: "AppIcon")
         alert.addButton(withTitle: "退出")
         alert.messageText = "未能成功读取图片!"
         alert.informativeText = "请检查图片路径中是否有空格或汉字, 若有则无法正常加载图片!"

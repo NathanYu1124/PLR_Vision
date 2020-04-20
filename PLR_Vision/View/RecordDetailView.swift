@@ -41,7 +41,7 @@ class RecordDetailView: NSView {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
-        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "RecordDetailView"), bundle: Bundle(for: type(of: self)))
+        let nib = NSNib(nibNamed: "RecordDetailView", bundle: Bundle(for: type(of: self)))
         nib?.instantiate(withOwner: self, topLevelObjects: nil)
         contentView.wantsLayer = true
 
@@ -64,7 +64,7 @@ class RecordDetailView: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "RecordDetailView"), bundle: Bundle(for: type(of: self)))
+        let nib = NSNib(nibNamed: "RecordDetailView", bundle: Bundle(for: type(of: self)))
         nib?.instantiate(withOwner: self, topLevelObjects: nil)
         contentView.wantsLayer = true
         
@@ -208,14 +208,16 @@ extension NSBezierPath {
         for i in 0 ..< self.elementCount {
             let type = self.element(at: i, associatedPoints: &points)
             switch type {
-            case .moveToBezierPathElement:
+            case .moveTo:
                 path.move(to: points[0])
-            case .lineToBezierPathElement:
+            case .lineTo:
                 path.addLine(to: points[0])
-            case .curveToBezierPathElement:
+            case .curveTo:
                 path.addCurve(to: points[2], control1: points[0], control2: points[1])
-            case .closePathBezierPathElement:
+            case .closePath:
                 path.closeSubpath()
+            default:
+                print("NSBezierPath: unknown type!")
             }
         }
 

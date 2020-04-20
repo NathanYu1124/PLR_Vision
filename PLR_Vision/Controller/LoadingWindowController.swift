@@ -15,17 +15,14 @@ class LoadingWindowController: NSWindowController {
         
         window?.contentView?.wantsLayer = true
         window?.contentView?.layer?.cornerRadius = 15.0
-        window?.contentView?.layer?.masksToBounds = true
         
         window!.backgroundColor = NSColor.clear
         window!.center()
+    
         
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
-            
-            
-            
-            let homeWC = self.storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "HomeWindowController")) as! HomeWindowController
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.5) {
+
+            let homeWC = self.storyboard!.instantiateController(withIdentifier: "HomeWindowController") as! HomeWindowController
 
             //  退出加载窗口
             self.window?.orderOut(nil)
@@ -35,7 +32,10 @@ class LoadingWindowController: NSWindowController {
             homeWC.window?.center()
 
         }
+        
+        
     }
+    
 }
 
 

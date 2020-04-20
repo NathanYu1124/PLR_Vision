@@ -34,7 +34,7 @@ class WelcomeView: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        let nib = NSNib(nibNamed: NSNib.Name(rawValue: "WelcomeView"), bundle: Bundle(for: type(of: self)))
+        let nib = NSNib(nibNamed: "WelcomeView", bundle: Bundle(for: type(of: self)))
         nib?.instantiate(withOwner: self, topLevelObjects: nil)
         
         contentView.wantsLayer = true
