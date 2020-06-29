@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class HomeViewController: NSViewController {
+class HomeViewController: NSViewController, NSWindowDelegate {
 
     @IBOutlet weak var menuView: NSView!
     @IBOutlet weak var containerView: NSView!
@@ -24,11 +24,16 @@ class HomeViewController: NSViewController {
     private var settingVC: SettingViewController!
     private var imageVC: ImageViewController!
     private var videoVC: VideoStreamViewController!
+
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        view.window?.delegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+                
         // 添加子视图控制器
         aboutVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ABOUT_VC") as? AboutViewController
         addChild(aboutVC)
@@ -129,8 +134,8 @@ class HomeViewController: NSViewController {
         }
     }
     
-    
-    func showStopAlert(pressedButton: NSButton) {
+    // MARK: - func
+    private func showStopAlert(pressedButton: NSButton) {
                 
         // alert提醒
         let alert = NSAlert()
@@ -143,11 +148,12 @@ class HomeViewController: NSViewController {
         alert.beginSheetModal(for: NSApplication.shared.keyWindow!) { (modalResponse) in
            
             if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {    // 退出
-                
+                                
                 // 先停止视频分析
                 if self.videoVC.isAnalysingVideo == true {
                     ImageConverter.stopAndQuit()
                     self.videoVC.isAnalysingVideo = false
+                    self.videoVC.videoArea.showFinishView()
                 }
                 
                 // 再切换视图: video -> image(setting, about)
@@ -168,8 +174,46 @@ class HomeViewController: NSViewController {
                 }
             }
         }
-        
     }
+    
+    // 停止视频处理
+    func stopVideoAnalysing() {
+        ImageConverter.stopAndQuit()
+        self.videoVC.isAnalysingVideo = false
+    }
+    
+    func showStopAlert() -> Bool {
+            
+        // alert提醒
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.icon = NSImage(named: "AppIcon")
+        alert.addButton(withTitle: "退出")
+        alert.addButton(withTitle: "继续检测")
+        alert.messageText = "你想在完成检测前退出吗?"
+        alert.informativeText = "停止会中断当前检测过程，导致检测结果不完整"
+        
+        let response = alert.runModal()
+        
+        if response == .alertFirstButtonReturn {    // 退出
+            stopVideoAnalysing()
+            return true
+        }
+        
+        return false
+    }
+    
 }
 
 
+// MARK: - NSWindowDelegate
+extension HomeViewController {
+    
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        if videoVC.isAnalysingVideo {
+            return showStopAlert()
+        }
+        
+        return true
+    }
+}

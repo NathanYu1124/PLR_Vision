@@ -54,6 +54,9 @@ class VideoStreamViewController: NSViewController {
         if !isAnalysingVideo {
             isAnalysingVideo = true
             
+            // 隐藏结束视图
+            videoArea.refreshVideoWinView()
+            
             // 禁止交互
             sender.isEnabled = false
             
@@ -189,6 +192,7 @@ class VideoStreamViewController: NSViewController {
                 if self.isAnalysingVideo == true {
                     ImageConverter.stopAndQuit()
                     self.isAnalysingVideo = false
+                    self.videoArea.showFinishView()
                 }
                 
             } else if modalResponse == NSApplication.ModalResponse.alertSecondButtonReturn {
@@ -218,6 +222,8 @@ class VideoStreamViewController: NSViewController {
     private func setFinalStateUI() {
         
         self.plateModels.removeAll()
+        
+        videoArea.showFinishView()
         
         showArea.stopAnimation()
     }

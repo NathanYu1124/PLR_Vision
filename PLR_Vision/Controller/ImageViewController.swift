@@ -189,7 +189,7 @@ class ImageViewController: NSViewController {
     private func updateUI(plateModel: PlateInfoModel) {
         charsView.updateUI(charsArray: plateModel.charsArray)
         platesView.updateUI(plateModels: dictModels)
-        plateDetailView.updateUI(plateModel: plateModel)
+        plateDetailView.updateUI(plateModel: plateModel, type: .image)
     }
     
     @IBAction func slideToNextPlate(_ sender: NSButton) {

@@ -99,41 +99,46 @@ class ShowWinView: NSView {
     @objc func slideAnimation() {
         
         if self.plateModels.count > 0 && currentIndex < self.plateModels.count {
-               // 设置左右视图的内容
-               rightView.updateUI(plateModel: plateModels[currentIndex])
-               
-               NSAnimationContext.runAnimationGroup({ (context) in
-                   context.duration = 0.5
-                   context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            // 设置左右视图的内容
+            rightView.updateUI(plateModel: plateModels[currentIndex], type: .video)
             
-                   leftView.animator().setFrameOrigin(NSPoint(x: -500, y: 40))
-                   leftView.animator().setFrameSize(NSSize(width: MaxWidth * mScaleRate, height: MaxHeight * mScaleRate))
-                   
-                   centerView.animator().setFrameOrigin(NSPoint(x: -228, y: 23))
-                   centerView.animator().setFrameSize(NSSize(width: MaxWidth * nScaleRate, height: MaxHeight * nScaleRate))
-                   
-                   rightView.animator().setFrameOrigin(NSPoint(x: 120, y: 10))
-                   rightView.animator().setFrameSize(NSSize(width: MaxWidth, height: MaxHeight))
-                   
-                   cacheView.animator().setFrameOrigin(NSPoint(x: 540, y: 23))
-                   cacheView.animator().setFrameSize(NSSize(width: MaxWidth * nScaleRate, height: MaxHeight * nScaleRate))
-                   
-               }) {
-
-                   self.leftView.frame = NSRect(x: 900, y: 40, width: self.MaxWidth * self.mScaleRate, height: self.MaxHeight * self.mScaleRate)
-                   
-                   let tempCenter = self.centerView     // 此时移到 leftView
-                   let tempLeft = self.leftView         // 此时移到 最左侧
-                   let tempRight = self.rightView       // 此时移到 centerView
-                   let tempCache = self.cacheView       // 此时移到 rightView
-
-                   self.centerView = tempRight
-                   self.leftView = tempCenter
-                   self.rightView = tempCache
-                   self.cacheView = tempLeft
-                   
-                   self.currentIndex += 1
-               }
+            NSAnimationContext.runAnimationGroup({ (context) in
+                context.duration = 0.5
+                context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+                
+                leftView.animator().setFrameOrigin(NSPoint(x: -500, y: 40))
+                leftView.animator().setFrameSize(NSSize(width: MaxWidth * mScaleRate, height: MaxHeight * mScaleRate))
+                leftView.infoView.animator().alphaValue = 0
+                
+                centerView.animator().setFrameOrigin(NSPoint(x: -228, y: 23))
+                centerView.animator().setFrameSize(NSSize(width: MaxWidth * nScaleRate, height: MaxHeight * nScaleRate))
+                centerView.infoView.animator().alphaValue = 0
+                
+                rightView.animator().setFrameOrigin(NSPoint(x: 120, y: 10))
+                rightView.animator().setFrameSize(NSSize(width: MaxWidth, height: MaxHeight))
+                rightView.infoView.animator().alphaValue = 1
+                
+                cacheView.animator().setFrameOrigin(NSPoint(x: 540, y: 23))
+                cacheView.animator().setFrameSize(NSSize(width: MaxWidth * nScaleRate, height: MaxHeight * nScaleRate))
+                cacheView.infoView.animator().alphaValue = 0
+                
+            }) {
+                
+                self.leftView.frame = NSRect(x: 900, y: 40, width: self.MaxWidth * self.mScaleRate, height: self.MaxHeight * self.mScaleRate)
+                self.leftView.model = nil
+                
+                let tempCenter = self.centerView     // 此时移到 leftView
+                let tempLeft = self.leftView         // 此时移到 最左侧
+                let tempRight = self.rightView       // 此时移到 centerView
+                let tempCache = self.cacheView       // 此时移到 rightView
+                
+                self.centerView = tempRight
+                self.leftView = tempCenter
+                self.rightView = tempCache
+                self.cacheView = tempLeft
+                
+                self.currentIndex += 1
+            }
         }
     }
     

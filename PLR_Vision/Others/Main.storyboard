@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="fyA-wB-9El">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="fyA-wB-9El">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +51,7 @@
                 </viewController>
                 <customObject id="uJ3-RS-Upa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="-1905"/>
+            <point key="canvasLocation" x="1238" y="-1905"/>
         </scene>
         <!--Home Window Controller-->
         <scene sceneID="N31-cB-BBz">
@@ -244,7 +244,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mCj-wv-GXD">
-                                        <rect key="frame" x="95" y="310" width="124" height="23"/>
+                                        <rect key="frame" x="95" y="310" width="123" height="23"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Version  2.0.2" id="we3-IK-h5x">
                                             <font key="font" metaFont="system" size="20"/>
                                             <color key="textColor" red="0.97647058823529409" green="0.94509803921568625" blue="0.9137254901960784" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -252,7 +252,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BIG-KM-ROE">
-                                        <rect key="frame" x="18" y="20" width="122" height="16"/>
+                                        <rect key="frame" x="18" y="20" width="123" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="©2020   PLR Vision" id="9nU-Ml-JHJ">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" red="0.97647058819999999" green="0.94509803920000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -294,23 +294,23 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GjM-TZ-fsj">
                                         <rect key="frame" x="18" y="133" width="62" height="15"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="SVM  1.1.2" id="pI2-ll-xLR">
-                                            <font key="font" metaFont="label" size="12"/>
+                                            <font key="font" metaFont="cellTitle"/>
                                             <color key="textColor" red="0.97647058819999999" green="0.94509803920000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zzL-f3-AE5">
-                                        <rect key="frame" x="96" y="133" width="84" height="15"/>
+                                        <rect key="frame" x="96" y="133" width="86" height="15"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="CNN_ZH  1.3.1" id="0f2-fu-8H2">
-                                            <font key="font" metaFont="label" size="12"/>
+                                            <font key="font" metaFont="cellTitle"/>
                                             <color key="textColor" red="0.97647058819999999" green="0.94509803920000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zFK-Zv-4d1">
-                                        <rect key="frame" x="196" y="133" width="94" height="15"/>
+                                        <rect key="frame" x="198" y="133" width="96" height="15"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="CNN_CAN  1.2.5" id="MuH-Qv-9Qp">
-                                            <font key="font" metaFont="label" size="12"/>
+                                            <font key="font" metaFont="cellTitle"/>
                                             <color key="textColor" red="0.97647058819999999" green="0.94509803920000002" blue="0.91372549020000005" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -536,10 +536,6 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" doubleValue="50" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Ste-qg-HWP">
-                                                <rect key="frame" x="46" y="157" width="32" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            </progressIndicator>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OYA-AR-e8c">
                                                 <rect key="frame" x="28" y="197" width="68" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
@@ -549,6 +545,11 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-CX-ndI">
+                                                <rect key="frame" x="36" y="140" width="48" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="carNum" id="0wI-FO-DTF"/>
+                                            </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-gO-UF7">
                                                 <rect key="frame" x="11" y="30" width="40" height="19"/>
                                                 <autoresizingMask key="autoresizingMask"/>
@@ -666,7 +667,7 @@
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvt-D4-iB4">
                                                 <rect key="frame" x="82" y="32" width="48" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="carNum" id="eJF-Zo-aD9"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logNum" id="eJF-Zo-aD9"/>
                                             </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-Et-H1t">
                                                 <rect key="frame" x="12" y="20" width="50" height="19"/>
@@ -770,6 +771,10 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="oCh-e7-Amr" userLabel="Video Window" customClass="VideoWinView" customModule="PLR_Vision" customModuleProvider="target">
                                         <rect key="frame" x="315" y="165" width="600" height="420"/>
                                         <subviews>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wbd-XA-K3D">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Xno-yr-Lzt" userLabel="StateBar">
                                                 <rect key="frame" x="10" y="10" width="580" height="25"/>
                                                 <subviews>
@@ -832,6 +837,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="endLabel" destination="tt4-Zm-r79" id="RTg-tP-W6H"/>
+                                            <outlet property="finishView" destination="Wbd-XA-K3D" id="xUh-5i-zY9"/>
                                             <outlet property="progressBar" destination="9zx-6p-2Na" id="4ZV-XG-YTh"/>
                                             <outlet property="startLabel" destination="5qR-pm-3sN" id="oGW-x3-AKM"/>
                                             <outlet property="stateBar" destination="Xno-yr-Lzt" id="DmK-VJ-4S5"/>
@@ -991,9 +997,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     </box>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3P-3X-upB">
-                                                        <rect key="frame" x="74" y="27" width="40" height="16"/>
+                                                        <rect key="frame" x="70" y="27" width="50" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="oOl-1v-2QV">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="0个" id="oOl-1v-2QV">
                                                             <font key="font" metaFont="systemBold"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1005,9 +1011,9 @@
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="carNum" id="wwY-cK-req"/>
                                                     </imageView>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzF-dz-ozr">
-                                                        <rect key="frame" x="7" y="27" width="40" height="16"/>
+                                                        <rect key="frame" x="2" y="27" width="50" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="dI2-m1-kQj">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="0个" id="dI2-m1-kQj">
                                                             <font key="font" metaFont="systemBold"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1036,7 +1042,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-mg-L7R">
                                                         <rect key="frame" x="8" y="25" width="122" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="B5d-ov-nrU">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="分析中..." id="B5d-ov-nrU">
                                                             <font key="font" size="14" name="Baloo-Regular"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1065,7 +1071,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqo-zC-Upm">
                                                         <rect key="frame" x="8" y="25" width="121" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="vi1-9q-6wE">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="分析中..." id="vi1-9q-6wE">
                                                             <font key="font" size="14" name="Baloo-Regular"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -27957,6 +27963,7 @@ AGcAAAAAAAAAAAAAAAAAGICOA
         <image name="leftArrow" width="128" height="128"/>
         <image name="lightning" width="128" height="128"/>
         <image name="loading_1" width="600" height="840"/>
+        <image name="logNum" width="512" height="512"/>
         <image name="photo" width="128" height="128"/>
         <image name="photo_selected" width="128" height="128"/>
         <image name="resolution" width="64" height="64"/>

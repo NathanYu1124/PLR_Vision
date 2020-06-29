@@ -9,6 +9,8 @@
 import Cocoa
 
 class LoadingWindowController: NSWindowController {
+    
+    var appDelegate: AppDelegate!
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -23,6 +25,9 @@ class LoadingWindowController: NSWindowController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.5) {
 
             let homeWC = self.storyboard!.instantiateController(withIdentifier: "HomeWindowController") as! HomeWindowController
+            
+            self.appDelegate = NSApplication.shared.delegate as? AppDelegate
+            self.appDelegate.homeVC = homeWC.contentViewController as? HomeViewController
 
             //  退出加载窗口
             self.window?.orderOut(nil)

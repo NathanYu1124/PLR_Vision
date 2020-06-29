@@ -12,7 +12,7 @@ class HomeWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    
+            
         setUI()
     }
 
@@ -30,8 +30,8 @@ class HomeWindowController: NSWindowController {
         window?.contentView?.layer?.cornerRadius = 20.0
         window?.contentView?.layer?.masksToBounds = true
         
-        window?.animationBehavior = .alertPanel
+        // 动画效果弹出窗口
+        window?.animationBehavior = .documentWindow
     }
-    
     
 }

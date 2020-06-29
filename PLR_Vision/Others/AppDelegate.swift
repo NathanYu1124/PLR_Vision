@@ -11,30 +11,31 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-//    // 创建状态栏
-//    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    var homeVC: HomeViewController!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
        
-//        // 设置状态栏Item
-//        if let button = statusItem.button {
-//            button.image = NSImage(named: NSImage.Name("StatusBarButtonImage"))
-//            button.action = #selector(showPopMenu(_:))
-//        }
     }
     
-    @objc func showPopMenu(_ sender: Any?) {
-        
-        
-    }
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        
     }
+    
+    
+//    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+//        // 当前是否在进行视频处理
+//        if !homeVC.videoHasFinished {
+//            let flag = homeVC.showStopAlert()
+//            
+//            return (flag == true) ? .terminateNow : .terminateCancel
+//        }
+//        
+//        return .terminateNow
+//    }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-
 
 }
 

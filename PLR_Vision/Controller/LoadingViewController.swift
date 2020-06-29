@@ -17,7 +17,7 @@ class LoadingViewController: NSViewController {
     }
     
     // 获取模型地址
-   private func getModelPath() {
+    private func getModelPath() {
         
         SVM_MODEL_PATH = Bundle.main.path(forResource: "svm", ofType: "xml")
         CNN_CHAR_MODEL_PATH = Bundle.main.path(forResource: "CNN_CHAR_MODEL", ofType: "md")
